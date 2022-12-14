@@ -32,7 +32,8 @@ app.use((req,res,next) =>{
 //Set Template Engine
 app.set('view engine', "ejs");
 
-
+//Route Prefix
+app.use("", require('./routes/routes'));
 
 
 app.listen(PORT, () =>{
