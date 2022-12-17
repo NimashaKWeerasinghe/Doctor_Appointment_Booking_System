@@ -7,6 +7,11 @@ const session = require('express-session');
 const app = express();
 const PORT = process.env.PORT || 4000;
 
+const server = require('http').createServer(app);
+const WebSocket = require('ws');
+
+const wss = new WebSocket.Server({server:server});
+
 //Databse Connection
 mongoose.connect(process.env.DB_URL,{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
@@ -36,7 +41,7 @@ app.set('view engine', "ejs");
 app.use("", require('./routes/routes'));
 
 
-app.listen(PORT, () =>{
+server.listen(PORT, () =>{
     console.log('Server started at http://localhost:5000');
 
 })
