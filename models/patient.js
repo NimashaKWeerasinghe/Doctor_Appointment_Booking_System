@@ -34,15 +34,15 @@ const patientSchema = new mongoose.Schema({
         type: Date,
         required: true,
         default: Date.now,
-    },
+    }
 });
 
 // Method to generate a hash from plain text
 patientSchema.methods.createHash = async function (plainTextPassword) {
-     // Hashing user's salt and password with 10 iterations,
-  const saltRounds = 10;
+     
+  const saltRounds = 10; // Hashing user's salt and password with 10 iterations
 
-     // First method to generate a salt and then create hash
+  // First method to generate a salt and then create hash
   const salt = await bcrypt.genSalt(saltRounds);
   return await bcrypt.hash(plainTextPassword, salt);
  // Second mehtod - Or we can create salt and hash in a single method also
@@ -51,7 +51,7 @@ patientSchema.methods.createHash = async function (plainTextPassword) {
 
 // Validating the candidate password with stored hash and hash function
 patientSchema.methods.validatePassword = async function (candidatePassword) {
-    return await bcrypt.compare(candidatePassword, this.phone);
+    return await bcrypt.compare(candidatePassword, this.pcpassword);
   };
 
 module.exports = mongoose.model("Patient", patientSchema);

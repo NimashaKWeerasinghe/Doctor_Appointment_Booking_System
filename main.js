@@ -18,6 +18,9 @@ const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
 db.once('open',() => console.log('Database Connected') );
 
+app.use(express.static(__dirname + '/assests/images'));
+app.use(express.static(__dirname + '/assests/css'));
+
 //Milddlewares
 app.use(express.urlencoded({extended: false}));
 app.use(express.json());
@@ -38,10 +41,14 @@ app.use((req,res,next) =>{
 app.set('view engine', "ejs");
 
 //Route Prefix
-app.use("", require('./routes/routes'));
+app.use("", require('./routes/patientRoutes'));
+app.use("", require('./routes/doctorRoutes'));
 
+app.get('/patientHome', (req,res) => {
+    res.render("patientHome.ejs")
+});
 
-server.listen(PORT, () =>{
+app.listen(PORT, () =>{
     console.log('Server started at http://localhost:5000');
 
-})
+});
