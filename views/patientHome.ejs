@@ -603,6 +603,22 @@ section:nth-child(even){
 }
     </style>
 
+    <script>
+    let menu = document.querySelector('#menu-btn');
+    let navbar = document.querySelector('.navbar');
+
+    menu.onclick = () =>{
+        menu.classList.toggle('fa-times');
+        navbar.classList.toggle('active');
+    }
+
+    window.onscroll = () =>{
+        menu.classList.remove('fa-times');
+        navbar.classList.remove('active');
+    }
+
+    </script>
+
 </head>
 <body>
     
@@ -637,14 +653,14 @@ section:nth-child(even){
     </div>
 
     <div class="content">
-        <h3>stay safe, stay healthy</h3>
+        <h3>stay safe, stay healthy <%= title.pname %> </h3> <%= doctors[1].dname %>
         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sed autem vero? Magnam, est laboriosam!</p>
         <a href="#" class="btn"> contact us <span class="fas fa-chevron-right"></span> </a>
     </div>
 
 </section>
 
-<!-- home section ends -->
+<!-- home section ends  -->
 
 <!-- icons section starts  -->
 
@@ -699,13 +715,13 @@ section:nth-child(even){
 <section class="doctors" id="doctors">
 
     <h1 class="heading"> our <span>doctors</span> </h1>
-
+   <% if(doctors != ''){ %>
     <div class="box-container">
-
+     <% for(var i = 0; i< doctors.length; i++) {%> 
         <div class="box">
             <img src="image/doc-1.jpg" alt="">
-            <h3>john deo</h3>
-            <span>expert doctor</span>
+            <h3><%= doctors[i].dname%></h3>
+            <span><%= doctors[i].special%></span>
             <div class="share">
                 <a href="#" class="fab fa-facebook-f"></a>
                 <a href="#" class="fab fa-twitter"></a>
@@ -713,67 +729,16 @@ section:nth-child(even){
                 <a href="#" class="fab fa-linkedin"></a>
             </div>
         </div>
+      <% } %>
 
-        <div class="box">
-            <img src="image/doc-2.jpg" alt="">
-            <h3>john deo</h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
+        <% }else { %>
+                <h1> No records </h1>
+           <% } %>
+        
 
-        <div class="box">
-            <img src="image/doc-3.jpg" alt="">
-            <h3>john deo</h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
+        
 
-        <div class="box">
-            <img src="image/doc-4.jpg" alt="">
-            <h3>john deo</h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="image/doc-5.jpg" alt="">
-            <h3>john deo</h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
-        <div class="box">
-            <img src="image/doc-6.jpg" alt="">
-            <h3>john deo</h3>
-            <span>expert doctor</span>
-            <div class="share">
-                <a href="#" class="fab fa-facebook-f"></a>
-                <a href="#" class="fab fa-twitter"></a>
-                <a href="#" class="fab fa-instagram"></a>
-                <a href="#" class="fab fa-linkedin"></a>
-            </div>
-        </div>
-
+        
     </div>
 
 </section>

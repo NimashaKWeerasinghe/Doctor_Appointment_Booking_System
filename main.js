@@ -41,14 +41,14 @@ app.use((req,res,next) =>{
 app.set('view engine', "ejs");
 
 //Route Prefix
-app.use("", require('./routes/patientRoutes'));
-app.use("", require('./routes/doctorRoutes'));
+app.use("", require('./routes/allRoutes'));
+
 
 app.get('/patientHome', (req,res) => {
     res.render("patientHome.ejs")
 });
 
-app.listen(PORT, () =>{
+server.listen(PORT, () =>{
     console.log('Server started at http://localhost:5000');
 
 });
