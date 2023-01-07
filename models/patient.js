@@ -22,6 +22,10 @@ const patientSchema = new mongoose.Schema({
         type: String,
         required: true,
     },
+    pgender: {
+        type: String,
+        required: true,
+    },
     pemail: {
         type: String,
         required: true,

@@ -604,8 +604,6 @@ section:nth-child(even){
 
 }
 
-
-
 </style>
 
 <script>
@@ -640,21 +638,6 @@ function myFunction() {
 
 }
 
-function myfun(){
-var x = document.getElementById("test").value;
-for(var i = 0; i< x.length; i++){
-const para = document.createElement("p");
-const node = document.createTextNode(x[i]);
-para.appendChild(node);
-
-const element = document.getElementById("div1");
-element.appendChild(para);
-}
-}
-
-$("#myform").submit(function(e) {
-    e.preventDefault();
-});
 </script>
 
 </head>
@@ -674,7 +657,7 @@ $("#myform").submit(function(e) {
         <a href="#book">book</a>
         <a href="#review">review</a>
         <a href="#blogs">blogs</a>
-        <a href="/patientProfile" class="btn"> <%= title.pname %> <span class="fas fa-chevron-right"></span> </a>
+        <a href="/doctorProfile" class="btn"> <%= docDetalisArray.dname %> <span class="fas fa-chevron-right"></span> </a>
         <a href="/logout" class="btn"> Log out <span class="fas fa-chevron-right"></span> </a>
     </nav>
 
@@ -828,18 +811,13 @@ $("#myform").submit(function(e) {
 	
                  
             <h3 id="dname"><%= doctors[i].dname%></h3>
-            <form>
-                <input type="hidden" id="pdname" name="abcName"  value="<%= title.pname %>">
-                <input type="hidden" id="pdphone" name="abcName"  value="<%= title.pphone %>">
-                <input type="hidden" id="pdemail" name="abcName"  value="<%= title.pemail %>">
-                <input type="hidden" id="pdgender" name="abcName"  value="<%= title.pgender %>">
-                <input type="hidden" id="myInput" value="W3Schools">
+            
                 <span><%= doctors[i].special%></span> <br>
                 <span><%= doctors[i].experience%></span>
                 <div class="share">
-                <button class="btn" style="width:200px; height:60px;" onclick="myFunction()"> Add Appoitment </button>
+               
                 </div>
-             </form>
+             
               
         </div>
       <% } %>
@@ -858,55 +836,31 @@ $("#myform").submit(function(e) {
 
 <!-- doctors section ends -->
 
-<!-- booking section starts   -->
+<!-- Time Slots section starts   -->
 
 
 
 <section class="book" id="book">
 
-    <h1 class="heading"> <span>book</span> now </h1>    
+    <h1 class="heading"> <span>Time</span> Slots </h1>    
 
     <div class="row">
 
         <div class="image">
             <img src="image/book-img.svg" alt="">
         </div>
-        
-        <form action="/addAppointment" method="post" id="myform">
-            <h3>book appointment</h3>
+
+        <form action="/timeslots" method="post">
+            <h3>Add Time Slots</h3>
             
-            <input name="aname" id = "pname" type="text" placeholder="Your Name" class="box">
-            <input name="aphone" id = "pphone" type="number" placeholder="Your Phone Number" class="box">
-            <input name="aemail" id = "pemail" type="email" placeholder="Your Email" class="box">
-            <input name="agender" id = "pgender" type="text" placeholder="Your Gender" class="box">
-            <input name="aage" id = "page" type="number" placeholder=" Your Age" class="box">
            
-            <br>
-            <input name="adocname" type="text" placeholder="Doctor's Name" class="box">
-            <textarea name="adescription" class="box" placeholder="Description">Description </textarea>
-            <input name="adate" type="date" class="box">
-           
-            <input id="but1" name="findTime" type="submit" value="Find Time Slots" class="btn" onclick="">
-              <button class="btn" style="width:200px; height:60px;" onclick="myfun()"> Add  </button>
-             <div id="div1"> 
-           <% if(success != ''){ %>
-             <% for(var i = 0; i< success.length; i++) {%> 
-           <h2> <%= success[i].dtime %> </h2>
-          
-           <% } %>
-            <% } %>
-
-        </div>
-</form>
-
-            <hr>
-          
-           
-        
-
-        
-        
-        
+            <input name="ddate" type="date" class="box" placeholder="Enter Date" class="box">
+            <input name="dtime" type="time" class="box" placeholder="Enter Time" class="box">
+            <input type="submit" value="Add Time Slot" class="btn">
+             
+        </form>
+            
+      
     </div>
 
 </section>
@@ -1072,7 +1026,7 @@ $("#myform").submit(function(e) {
 
     </div>
 
-   
+  
 
 </section>
 
