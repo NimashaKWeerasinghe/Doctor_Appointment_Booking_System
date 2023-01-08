@@ -638,6 +638,11 @@ function myFunction() {
 
 }
 
+
+function  myfun(){
+    window.alert("Time Slot Added");
+}
+
 </script>
 
 </head>
@@ -850,13 +855,13 @@ function myFunction() {
             <img src="image/book-img.svg" alt="">
         </div>
 
-        <form action="/timeslots" method="post">
+        <form action="/timeslots" method="post" id="formId">
             <h3>Add Time Slots</h3>
             
            
             <input name="ddate" type="date" class="box" placeholder="Enter Date" class="box">
             <input name="dtime" type="time" class="box" placeholder="Enter Time" class="box">
-            <input type="submit" value="Add Time Slot" class="btn">
+            <input type="submit" value="Add Time Slot" class="btn" onclick="myfun()">
              
         </form>
             

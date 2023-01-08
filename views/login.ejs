@@ -169,25 +169,17 @@ li a:hover {
         <div class="form-box" style="width: 480px;height: 580px;position: relative;margin-left:1127px; margin-top:-588px;background: white;padding:5px;border:5px; overflow: hidden; opacity:0.9 ">
 		    <label style="font-size:25px; margin-left:200px;margin-top:500px;"> Admin </label>
 				<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
-					<div id="btn2" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background: pink; transition: .5s;"> </div>
-                         <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="logina()"> Login </button>
-                          <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="registera()"> Register </button>
+					<div id="btn2" style="top:0; left:0; position:absolute; width:410px; height:100%; border-radius:30px; background: pink; transition: .5s;"> </div>
+                         <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px; text-align:right;" onclick="logina()"> Login </button>
+                         
 				</div>
-				<form  id = "login2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter UnserNmae Here" required>
-				    <input type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+				<form  action="/loginAdmin" method="post" id = "login2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+					<input name="adminemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter UnserNmae Here" required>
+				    <input name="adminpw" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
 				    <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: pink; border:0; outline:none; border-radius:30px;"> Log in </button>
 				</form>
 			
-				<form  id = "register2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
-					<input type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-					<input type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
-				    <input type="date" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Date of Birth Here" required>
-				    <input type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter NIC Here" required>
-				    <input type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				    <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background: pink; border:0; outline:none; border-radius:30px;"> Register </button>
-				</form>
+			
         </div>
     </div>
 </div>

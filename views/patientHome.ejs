@@ -652,9 +652,16 @@ element.appendChild(para);
 }
 }
 
-$("#myform").submit(function(e) {
-    e.preventDefault();
-});
+
+
+
+ var retForm = document.getElementById("retForm");
+var retOp = document.getElementById("retOp");
+function submitFormReturn(event) {
+     retForm.style.display = "none";
+     retOp.innerHTML = "<b>Form submit successful</b>";
+}
+
 </script>
 
 </head>
@@ -887,27 +894,41 @@ $("#myform").submit(function(e) {
             <input name="adate" type="date" class="box">
            
             <input id="but1" name="findTime" type="submit" value="Find Time Slots" class="btn" onclick="">
-              <button class="btn" style="width:200px; height:60px;" onclick="myfun()"> Add  </button>
-             <div id="div1"> 
-           <% if(success != ''){ %>
-             <% for(var i = 0; i< success.length; i++) {%> 
-           <h2> <%= success[i].dtime %> </h2>
+               </form>
+               </div>
+               
+            
+                <% if(success != ''){ %>
+                <div class="row">
+                <form action="/updateAppointmentTime" method="post" style="margin-left:700px;"  onsubmit="return false">
+                
+                    <% for(var i = 0; i< success.length; i++) {%> 
+                        <div class="box" style="border: 1px outset red;font-size:18px;width:100px;margin:20px;display: inline-block;">
+                            <%= success[i].dtime %> 
+                        </diV>
+                        
           
-           <% } %>
-            <% } %>
+                    <% } %>
+                     <input name="userTime"  type="text" placeholder="Enter Time Slot for Your Appoitment" class="box">
+             <input id="but1" name="confirmApp" type="submit" value="Confirm Appointment" class="btn" onclick="">
+        </form>
+                <% } %>
 
-        </div>
-</form>
-
-            <hr>
-          
+                 <p id="retOp"></p>
+            </div>
+      
+   
+        
+      
+            
+             
            
         
 
         
         
         
-    </div>
+    
 
 </section>
 

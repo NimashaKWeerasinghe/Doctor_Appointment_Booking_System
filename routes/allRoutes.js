@@ -185,6 +185,7 @@ routes.get("/patientHome", (req,res) => {
   
       global.doctorname = req.body.adocname;
       global.doctordate =  req.body.adate;
+      global.userEmail =  req.body.aemail;
 
       newAppointment.save((err) => {
         if(err){
@@ -221,6 +222,36 @@ routes.get("/patientHome", (req,res) => {
 
 
  
+  routes.post(
+    "/updateAppointmentTime",
+    asyncHandler(async (req, res) => {
+
+     
+      userTime = req.body.userTime
+      console.log(userTime)
+     
+      var newvalues = { $set: {atime:userTime} };
+
+      Appointment.updateOne({$and: [{adocname:doctorname},{adate:doctordate},{aemail:userEmail}]},newvalues).exec((err,dis) =>{
+    
+        console.log("1 document updated");
+   });
+
+
+   TimeSlot.deleteOne({$and: [{dtime:userTime},{ddate:doctordate},{demail:docemail}]},newvalues).exec((err,dis) =>{
+    
+    console.log("1 document deleted");
+});
+
+   
+
+     
+    
+    })
+  );
+
+
+
  
 //Display patient profile page 
 routes.get("/patientProfile", (req,res) => {
@@ -279,7 +310,7 @@ routes.post(
     const newTimeSlot = new TimeSlot({
       demail: docemail,
       ddate: req.body.ddate,
-      dtime: req.body.dtime,
+      dtime: req.body.dtime
       
     });
 
@@ -340,9 +371,43 @@ routes.get("/doctorProfile", (req,res) => {
      });
   });
  
- 
-
-
+ // Admin Login 
+  routes.post(
+    "/loginAdmin",
+    asyncHandler(async (req, res) => {
+  
+      global.adminemail = req.body.adminemail ;
+      global.adminpw = req.body.adminpw ;
+      
+  
+      if (adminemail === null) {
+        return res.status(400).json({
+          message: "User not found.",
+        });
+      } else {
+        if (adminemail=='medcareadmingmail.com' && adminpw=='admin123' ) {
+          console.log('User Successfully Logged In')
+          //return res.status(200).json({
+            //message: "User Successfully Logged In",
+          //});
+          res.redirect("/adminHome")
+        } else {
+          console.log('Incorrect Password')
+          return res.status(400).json({
+           
+            message: "Incorrect Password",
+          });
+        }
+      }
+    })
+  );
+  
+// Display adminHome.ejs
+routes.get("/adminHome", (req,res) => {
+  res.render('adminHome', {
+      title: 'Home Page',
+  });
+});
 
 routes.get('/logout', function(req, res, next) {
   // remove the req.user property and clear the login session
