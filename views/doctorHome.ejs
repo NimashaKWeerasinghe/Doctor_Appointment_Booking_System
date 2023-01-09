@@ -604,6 +604,30 @@ section:nth-child(even){
 
 }
 
+
+#customers {
+  font-family: Arial, Helvetica, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+#customers td, #customers th {
+  border: 1px solid #ddd;
+  padding: 8px;
+}
+
+#customers tr:nth-child(even){background-color: #f2f2f2;}
+
+#customers tr:hover {background-color: #ddd;}
+
+#customers th {
+  padding-top: 12px;
+  padding-bottom: 12px;
+  text-align: left;
+  background-color: #04AA6D;
+  color: white;
+}
+
 </style>
 
 <script>
@@ -690,93 +714,9 @@ function  myfun(){
 
 <!-- home section ends -->
 
-<!-- icons section starts  -->
 
-<section class="icons-container">
 
-    <div class="icons">
-        <i class="fas fa-user-md"></i>
-        <h3>140+</h3>
-        <p>doctors at work</p>
-    </div>
 
-    <div class="icons">
-        <i class="fas fa-users"></i>
-        <h3>1040+</h3>
-        <p>satisfied patients</p>
-    </div>
-
-    <div class="icons">
-        <i class="fas fa-procedures"></i>
-        <h3>500+</h3>
-        <p>bed facility</p>
-    </div>
-
-    <div class="icons">
-        <i class="fas fa-hospital"></i>
-        <h3>80+</h3>
-        <p>available hospitals</p>
-    </div>
-
-</section>
-
-<!-- icons section ends -->
-
-<!-- services section starts  -->
-
-<section class="services" id="services">
-
-    <h1 class="heading"> our <span>services</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <i class="fas fa-notes-medical"></i>
-            <h3>free checkups</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-ambulance"></i>
-            <h3>24/7 ambulance</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-user-md"></i>
-            <h3>expert doctors</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-pills"></i>
-            <h3>medicines</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-procedures"></i>
-            <h3>bed facility</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-        <div class="box">
-            <i class="fas fa-heartbeat"></i>
-            <h3>total care</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ad, omnis.</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- services section ends -->
 
 <!-- about section starts  -->
 
@@ -872,58 +812,52 @@ function  myfun(){
 
 <!-- booking section ends -->
 
-<!-- review section starts  -->
+<!-- Appointments section starts  -->
 
 <section class="review" id="review">
     
-    <h1 class="heading"> client's <span>review</span> </h1>
+    <h1 class="heading"> View <span>Appointment</span> </h1>
 
     <div class="box-container">
+     <% if(appArray != ''){ %>
+      
+      <table id="customers">
+  <tr>
+    <th>NO</th>
+    <th>Name</th>
+    <th>Phone</th>
+    <th>Gender</th>
+    <th>Age</th>
+    <th>Description</th>
+    <th>Date</th>
+    <th>Time</th>
+  </tr>
 
-        <div class="box">
-            <img src="image/pic-1.png" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
-        </div>
+   <% for(var i = 0; i< appArray.length; i++) {%> 
+  <tr>
+    <td><%= i+1 %></td>
+    <td><%= appArray[i].aname%> </td>
+    <td><%= appArray[i].aphone%></td>
+    <td><%= appArray[i].agender%></td>
+    <td><%= appArray[i].aage%></td>
+    <td><%= appArray[i].adescription%> </td>
+    <td><%= appArray[i].adate%> </td>
+    <td><%= appArray[i].atime%> </td>
+  </tr>
+  
+ 
+</table>
+ <% } %>
 
-        <div class="box">
-            <img src="image/pic-2.png" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
-        </div>
-
-        <div class="box">
-            <img src="image/pic-3.png" alt="">
-            <h3>john deo</h3>
-            <div class="stars">
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star"></i>
-                <i class="fas fa-star-half-alt"></i>
-            </div>
-            <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam sapiente nihil aperiam? Repellat sequi nisi aliquid perspiciatis libero nobis rem numquam nesciunt alias sapiente minus voluptatem, reiciendis consequuntur optio dolorem!</p>
-        </div>
+        <% }else { %>
+                <h1> No records </h1>
+           <% } %>
 
     </div>
 
 </section>
 
-<!-- review section ends -->
+<!-- Appointments section ends -->
 
 <!-- blogs section starts  -->
 

@@ -900,7 +900,7 @@ function submitFormReturn(event) {
             
                 <% if(success != ''){ %>
                 <div class="row">
-                <form action="/updateAppointmentTime" method="post" style="margin-left:700px;"  onsubmit="return false">
+                <form action="/updateAppointmentTime" method="post" style="margin-left:700px;"  >
                 
                     <% for(var i = 0; i< success.length; i++) {%> 
                         <div class="box" style="border: 1px outset red;font-size:18px;width:100px;margin:20px;display: inline-block;">

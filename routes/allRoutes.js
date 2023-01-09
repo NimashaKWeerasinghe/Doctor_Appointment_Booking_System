@@ -334,24 +334,34 @@ routes.post(
  //Display doctorHome.ejs
  routes.get("/doctorHome", (req,res) => {
   
-   Doctor.findOne({demail: docemail}).exec((err,docDetails) =>{
+  Doctor.findOne({demail: docemail}).exec((err,docDetails) =>{
      
          x = docDetails;
-       
-         
+         //doctorName = docDetails.dname;
+        // console.log(doctorName)
+        Appointment.find({adocname:docDetails.dname}).exec((err,appDetails) =>{
      
-    });
+          global.appArray = appDetails;
+
+          Doctor.find().exec((err,doctors) =>{
+            if(err){
+                res.json({message: err.message});
+            }else{
+                res.render('DoctorHome', {
+                    docDetalisArray: x,
+                    doctors: doctors,
+                    appArray: appArray,
+                });
+            }
+           });
+        
+      });
+       
+  });
+
  
-   Doctor.find().exec((err,doctors) =>{
-     if(err){
-         res.json({message: err.message});
-     }else{
-         res.render('DoctorHome', {
-             docDetalisArray: x,
-             doctors: doctors,
-         });
-     }
-    });
+ 
+   
    });
 
    
@@ -404,9 +414,22 @@ routes.get("/doctorProfile", (req,res) => {
   
 // Display adminHome.ejs
 routes.get("/adminHome", (req,res) => {
-  res.render('adminHome', {
-      title: 'Home Page',
-  });
+
+  Appointment.find().exec((err,appForAdmin) =>{
+
+    Patient.find().exec((err,patientForAdmin) =>{
+
+      Doctor.find().exec((err,doctorForAdmin) =>{
+    
+        res.render('adminHome', {
+          appForAdmin: appForAdmin,
+          patientForAdmin: patientForAdmin,
+          doctorForAdmin: doctorForAdmin
+            
+        });
+      });
+    });
+   });
 });
 
 routes.get('/logout', function(req, res, next) {
