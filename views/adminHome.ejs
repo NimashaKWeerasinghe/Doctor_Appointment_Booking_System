@@ -756,7 +756,9 @@ menuBar.addEventListener('click', function () {
                                 <th>NIC</th>
                                 <th>DOB</th>
                                 <th>Gender</th>
-                                 <th>Other</th>
+								<th> Update </th>
+								<th> Delete </td>
+                                
                                 
 							</tr>
 						</thead>
@@ -771,7 +773,17 @@ menuBar.addEventListener('click', function () {
                                 <td><%= patientForAdmin[i].pnic%></td>
                                 <td><%= patientForAdmin[i].pdob%></td>
                                 <td><%= patientForAdmin[i].pgender%></td>
-								<td><span class="status completed">Completed</span></td>
+								<td>
+									<a href="/editPatient/<%= patientForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+										Update
+									</a>
+								</td>
+								<td>
+									<a href="/deletePatient/<%= patientForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+										Delete
+									</a>
+								</td>
+								
 							</tr>
                                <% } %>
 						</tbody>
@@ -804,7 +816,8 @@ menuBar.addEventListener('click', function () {
                                 <th>Phone</th>
                                 <th>Specialtion</th>
                                 <th>Working Experience</th>
-                                 <th>Other</th>
+                                <th> Update </th>
+								<th> Delete </td>
                                 
 							</tr>
 						</thead>
@@ -818,8 +831,18 @@ menuBar.addEventListener('click', function () {
                                 <td><%= doctorForAdmin[i].dphone%></td>
                                 <td><%= doctorForAdmin[i].special%></td>
                                 <td><%= doctorForAdmin[i].experience%></td>
+								<td>
+									<a href="/editDoctor/<%= doctorForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+										Update
+									</a>
+								</td>
+								<td>
+									<a href="/deleteDoctor/<%= doctorForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+										Delete
+									</a>
+								</td>
                                 
-								<td><span class="status completed">Completed</span></td>
+								
 							</tr>
                             <% } %>
 						</tbody>
@@ -858,6 +881,8 @@ menuBar.addEventListener('click', function () {
                                 <th>Doctor's Name</th>
                                 <th>Date</th>
                                 <th>Time</th>
+								<th> Update </th>
+								<th> Delete </td>
                                 <th>Other</th>
 							</tr>
 						</thead>
@@ -875,6 +900,17 @@ menuBar.addEventListener('click', function () {
                                 <td><%= appForAdmin[i].adocname%></td>
                                 <td><%= appForAdmin[i].adate%></td>
                                 <td><%= appForAdmin[i].atime%></td>
+								<td>
+									<a href="/editAppointment/<%= appForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+										Update
+									</a>
+								</td>
+								<td>
+									<a href="/deleteAppointment/<%= appForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+										Delete
+									</a>
+								</td>
+                                
 								<td><span class="status completed">Completed</span></td>
 							</tr>
                             <% } %>

@@ -432,6 +432,154 @@ routes.get("/adminHome", (req,res) => {
    });
 });
 
+//Edit Patient Route
+routes.get('/editPatient/:id',(req,res)=>{
+  let id = req. params.id;
+
+  Patient.findById(id, (err,patient)=>{
+    res.render("editPatient", {
+      patientForAdmin : patient
+    })
+  })
+})
+
+//Edit Doctor Route
+routes.get('/editDoctor/:id',(req,res)=>{
+  let id = req. params.id;
+
+  Doctor.findById(id, (err,doctor)=>{
+    res.render("editDoctor", {
+      DoctorForAdmin : doctor
+    })
+  })
+})
+
+//Edit Doctor Route
+routes.get('/editAppointment/:id',(req,res)=>{
+  let id = req. params.id;
+
+  Appointment.findById(id, (err,appointmentarray)=>{
+    res.render("editAppointment", {
+      appForAdmin : appointmentarray
+    })
+  })
+})
+
+//Update Patient Route
+routes.post('/updatePatient/:id',(req,res) =>{
+let id = req.params.id;
+
+Patient.findByIdAndUpdate(id,{
+
+  pname: req.body.pnameAdmin,
+  pdob: req.body.pdobAdmin,
+  pnic: req.body.pnicAdmin,
+  pphone: req.body.pphoneAdmin,
+  pgender: req.body.pgenderAdmin,
+  pemail: req.body.pemailAdmin,
+
+}, (err, result) => {
+  if(err){
+    res.json({message:err.message, type: 'danger'});
+    console.log('Error')
+  }else{
+    console.log('updated')
+  };
+  res.redirect('/adminHome');
+})
+
+});
+
+//Update Doctor Route
+routes.post('/updateDoctor/:id',(req,res) =>{
+  let id = req.params.id;
+  
+  Doctor.findByIdAndUpdate(id,{
+  
+    dname: req.body.dnameAdmin,
+    demail: req.body.demailAdmin,
+    dphone: req.body.dphoneAdmin,
+    special: req.body.specialAdmin,
+    experience: req.body.experienceAdmin,
+    
+  
+  }, (err, result) => {
+    if(err){
+      res.json({message:err.message, type: 'danger'});
+      console.log('Error')
+    }else{
+      console.log('updated')
+    };
+    res.redirect('/adminHome');
+  })
+  
+  });
+
+  //Update Appointment Route
+routes.post('/updateAppointment/:id',(req,res) =>{
+  let id = req.params.id;
+  
+  Appointment.findByIdAndUpdate(id,{
+  
+    aname: req.body.anameAdmin,
+    aphone: req.body.aphoneAdmin,
+    aemail: req.body.aemailAdmin,
+    agender: req.body.agenderAdmin,
+    aage: req.body.aageAdmin,
+    adocname: req.body.adocnameAdmin,
+    adescription: req.body.adescriptionAdmin,
+    adate: req.body.adateAdmin,
+    atime: req.body.atimeAdmin,
+    
+  
+  }, (err, result) => {
+    if(err){
+      res.json({message:err.message, type: 'danger'});
+      console.log('Error')
+    }else{
+      console.log('updated')
+    };
+    res.redirect('/adminHome');
+  })
+  
+  });
+
+// Delele Patient
+routes.get('/deletePatient/:id',(req,res)=>{
+  let id = req. params.id;
+
+  Patient.findByIdAndRemove(id, (err,result)=>{
+    
+     // res.redirect('adminHome');
+    
+  })
+})
+
+
+// Delele Doctor
+routes.get('/deleteDoctor/:id',(req,res)=>{
+  let id = req. params.id;
+
+  Doctor.findByIdAndRemove(id, (err,result)=>{
+    
+     // res.redirect('adminHome');
+    
+  })
+})
+
+// Delele appointmrnt
+routes.get('/deleteAppointment/:id',(req,res)=>{
+  let id = req. params.id;
+
+  Appointment.findByIdAndRemove(id, (err,result)=>{
+    
+     // res.redirect('adminHome');
+    
+  })
+})
+
+
+
 routes.get('/logout', function(req, res, next) {
   // remove the req.user property and clear the login session
  // req.logout();
