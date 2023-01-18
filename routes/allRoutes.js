@@ -14,8 +14,8 @@ const passport = require('passport');
 const flash = require("express-flash")
 
 const config = require("../config/config");
-const session = require("express-session");
-routes.use(session({secret:config.sessionSecret}));
+//const session = require("express-session");
+//routes.use(session({secret:config.sessionSecret}));
 
 
 const bodyParser = require("body-parser");

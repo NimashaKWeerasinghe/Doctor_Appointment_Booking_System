@@ -12,6 +12,8 @@ const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({server:server});
 
+mongoose.set('strictQuery', false);
+
 //Databse Connection
 mongoose.connect(process.env.DB_URL,{useNewUrlParser:true, useUnifiedTopology:true});
 const db = mongoose.connection;
@@ -42,6 +44,8 @@ app.set('view engine', "ejs");
 
 //Route Prefix
 app.use("", require('./routes/allRoutes'));
+
+module.exports = server
 
 
 app.get('/patientHome', (req,res) => {
