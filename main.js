@@ -12,7 +12,7 @@ const WebSocket = require('ws');
 
 const wss = new WebSocket.Server({server:server});
 
-mongoose.set('strictQuery', false);
+//mongoose.set('strictQuery', false);
 
 //Databse Connection
 mongoose.connect(process.env.DB_URL,{useNewUrlParser:true, useUnifiedTopology:true});

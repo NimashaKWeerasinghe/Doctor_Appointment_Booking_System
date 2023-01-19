@@ -680,6 +680,12 @@ menuBar.addEventListener('click', function () {
 					<span class="text">Appointments</span>
 				</a>
 			</li>
+			<li>
+				<a href="#">
+					<i class='bx bxs-doughnut-chart' ></i>
+					<span class="text">FeedBacks</span>
+				</a>
+			</li>
 			
 		</ul>
 		<ul class="side-menu">
@@ -860,6 +866,8 @@ menuBar.addEventListener('click', function () {
 
 
 
+			
+
 			<div class="table-data">
 				<div class="order">
 					<div class="head">
@@ -925,6 +933,44 @@ menuBar.addEventListener('click', function () {
 				</div>
 				
 			</div>
+
+			<div class="table-data">
+				<div class="order">
+					<div class="head">
+						<h3>Patient's FeedBacks</h3>
+						<i class='bx bx-search' ></i>
+						<i class='bx bx-filter' ></i>
+					</div>
+                    <% if(fbForAdmin != ''){ %>
+					<table>
+						<thead>
+							<tr>
+								<th>No</th>
+								<th>Name</th>
+								<th>Message</th>
+							</tr>
+						</thead>
+                       
+                        <% for(var i = 0; i< fbForAdmin.length; i++) {%> 
+						<tbody>
+							<tr>
+								<td>    <%= i+1 %>  </td>
+								<td><%= fbForAdmin[i].name%></td>
+                                <td><%= fbForAdmin[i].feedback%></td>
+							</tr>
+                            <% } %>
+						</tbody>
+                       
+
+					</table>
+                     
+                       <% }else { %>
+                <h1> No records </h1>
+           <% } %>
+				</div>
+				
+			</div>
+
 		</main>
 		<!-- MAIN -->
 	</section>

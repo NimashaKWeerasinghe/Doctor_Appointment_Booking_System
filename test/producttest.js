@@ -1,7 +1,7 @@
 const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should();
-const Product = require('../models/doctor');
+//const Product = require('../models/doctor');
 
 //const express = require('express');
 //const app = express();
@@ -11,7 +11,7 @@ const Product = require('../models/doctor');
 
 const chaiHttp = require('chai-http');
 const server = require('../main');
-const { deleteOne } = require('../models/patient');
+//const { deleteOne } = require('../models/patient');
 
 chai.use(chaiHttp);
 
@@ -41,7 +41,7 @@ describe('/First Test Collection', () => {
         .post('/loginPatient')
         .send(userCredentials)
         .end(function(err, response){
-            expect(response.statusCode).to.equal(400);
+            expect(response.statusCode).to.equal(200);
             expect('Location', '/patientHome');
             done();
         })
@@ -83,6 +83,7 @@ describe('/First Test Collection', () => {
 
     // Register Patient 
     it('test register patient route with values....', async function ()  {
+
         let patient = {
             pname: 'Ashanthi Jayakodi',
             pdob: '1996-07-08',
@@ -93,13 +94,11 @@ describe('/First Test Collection', () => {
             pcpassword: 'ashanthi123'
         }
 
-         chai.request(server)
+        chai.request(server)
         .post('/addPatient')
         .send(patient)
         .end(function(err, response){
-            expect(response.statusCode).to.equal(500);
-            
-            
+            expect(response.statusCode).to.equal(500);   
         })
     })
     

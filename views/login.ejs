@@ -2,7 +2,13 @@
 <html>
 <head>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 <style>
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+
+*{
+    font-family: 'Poppins', sans-serif;
+}
 
 #example2 {
   
@@ -73,108 +79,149 @@ li a:hover {
 }
 
 .form-box{
-    background:url('patient1.jpg');
+  border-radius:0.5rem;
+  width: 480px;
+  height: 595px;
+  position: relative;
+  margin-left:1px;
+  background:#c5eef0;
+  padding:5px;
+  overflow: hidden;
+  opacity:0.9;  
+  border-style: solid;
+  border-color: #16a085;
+  box-shadow: 5px 10px #888888;
+}
+
+.formback{
+  height:700px; 
+  width:100%; 
+  background-color:; 
+  background-position:center; 
+  background-size:cover; 
+  mix-blend-mode: multiply;
+  position: relative;
+  margin-top:3px;
+}
+
+.headclass{
+  height:352px;
+  width:1005;
+  background-color:#c5eef0;
+  box-shadow: 5px 10px #888888;
+  border-radius:0.5rem;
+  
+}
+
+.logoname{
+  font: 80px Poppins;
+  text-transform: uppercase;
+  color:#1ca999;
+  margin-left:200px;
+  padding-top:70px;
+  text-shadow: 6px 2px #888888;
+}
+
+.logophoto{
+  margin-left:750px;
+  padding-top:-500px;
+  margin-top:-206px;
+
 }
 </style>
 </head>
-<body style="background-color:;overflow: hidden;">
 
-<ul>
-  <li><a href="#">MyDoctor</a></li>
-  <li><a href="#example2">Patient</a></li>
-  <li><a href="#example3">Doctor</a></li>
-  <li><a href="#example4">Admin</a></li>
-</ul>
-<br>
+<body style="background-color:#e6eef0;">
 
+  <div class="headclass">
+    <div class="logoname"> <i class="fas fa-heartbeat"> </i> My <span style="color:black;"> Doctor</span> </div>
+    <div class="logophoto"> 
+      <img src="login.jpg" style="width:800px;height:380px;mix-blend-mode: multiply;"> </div>
+    </div>
+  <br>
 
-<div  style="height : 800px;width : 100%; background-color:red;background-image:url('login.jpg');background-position: center;position: absolute;background-size:cover;mix-blend-mode: multiply;">
-<div id="example2">
-   
+  <div  class="formback" style="">
+    <div id="example2">
     <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
-    
-        <div class="form-box" style="width: 480px;height: 580px;position: relative;margin-left:1px; margin-top:-5px;background: white;padding:5px;border:5px; overflow: hidden; opacity:0.9 ">
-		    <label style="font-size:25px; margin-left:200px;margin-top:500px;"> Patient </label>
-				<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
-					<div id="btn" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background: pink; transition: .5s;"> </div>
-                         <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="login()"> Login </button>
-                          <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="register()"> Register </button>
-				</div>
-				<form name="loginPatient" action="/loginPatient" method="post" id = "login" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input name="email" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter UnserNmae Here" required>
+      <div class="form-box" style=" margin-top:-10px; ">
+		    <label style="font-style:Lucida Console;font-size:25px; margin-left:200px;margin-top:500px;opacity:0.9;font-weight:bold;"> Patient </label>
+        <hr>
+				  <div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
+					  <div id="btn" style="opacity:0.7;top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background: #16a085; transition: .5s;"> </div>
+              <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="login()"> Login </button>
+              <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="register()"> Register </button>
+				    </div>
+				  <form name="loginPatient" action="/loginPatient" method="post" id = "login" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+					  <input name="email" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
 				    <input name="password" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				    <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: pink; border:0; outline:none; border-radius:30px;"> Log in </button>
-				</form>
+				    <br> <br>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background:  #16a085; border:0; outline:none; border-radius:30px;"> Log in </button>
+				  </form>
 			
-				<form name="addPatient" action="/addPatient" method="post" id = "register" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input type="text" name="pname" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
-					<input type="email" name="pemail" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-					<input type="text" name="pphone" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
-				  <input type="date" name="pdob" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Date of Birth Here" required>
-				  <input type="text" name="pgender" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Gender" required>
-          <input type="text" name="pnic" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter NIC Here" required>
-				  <input type="password" name="pcpassword" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				  <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background: pink; border:0; outline:none; border-radius:30px;"> Register </button>
-				</form>
-        </div>
+				  <form name="addPatient" action="/addPatient" method="post" id = "register" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <input type="text" name="pname" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
+            <input type="email" name="pemail" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+            <input type="text" name="pphone" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
+            <input type="text" name="pdob" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Date of Birth Here  (mm/dd/yyyy)" required>
+            <input type="text" name="pgender" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Gender Here" required>
+            <input type="text" name="pnic" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter NIC Here" required>
+            <input type="password" name="pcpassword" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background:  #16a085; border:0; outline:none; border-radius:30px;"> Register </button>
+          </form>
+      </div>
     </div>
-   </div>
+  </div>
 
-
-
-
-
-<div id="example3">
-   
+    <div id="example3">
     <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
-   
-        <div class="form-box" style="width: 480px;height: 580px;position: relative;margin-left:545px; margin-top:-690px;background: white;padding:5px;border:5px; overflow: hidden; opacity:0.9 ">
-		    <label style="font-size:25px; margin-left:200px;margin-top:500px;"> Doctor </label>
+      <div class="form-box" style="margin-left:545px; margin-top:-708px;">
+		    <label style="font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Doctor </label>
+        <hr>
 				<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
-					<div id="btn1" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background: pink; transition: .5s;"> </div>
-                         <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="logind()"> Login </button>
-                          <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="registerd()"> Register </button>
-				</div>
-				<form action="/loginDoctor" method="post" id = "login1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input name="dlemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter UnserNmae Here" required>
-				    <input name="dlpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				    <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: pink; border:0; outline:none; border-radius:30px;"> Log in </button>
-				</form>
+					<div id="btn1" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background:  #16a085; transition: .5s;"> </div>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="logind()"> Login </button>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="registerd()"> Register </button>
+				  </div>
+				  <form action="/loginDoctor" method="post" id = "login1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+					    <input name="dlemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+				      <input name="dlpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+				      <br> <br>
+              <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background:  #16a085; border:0; outline:none; border-radius:30px;"> Log in </button>
+          </form>
 			
-				<form action="/addDoctor" method="post" id = "register1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input name="dname" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
-					<input name="demail" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-					<input name= "dphone" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
-				    <input name="special" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Specialization Here" required>
-				    <input name="experience" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Work Experince in Years Here" required>
-				    <input name="dpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				    <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background: pink; border:0; outline:none; border-radius:30px;"> Register </button>
-				</form>
+				  <form action="/addDoctor" method="post" id = "register1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <input name="dname" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
+            <input name="demail" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+            <input name= "dphone" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
+            <input name="special" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Specialization Here" required>
+            <input name="experience" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Work Experince in Years Here" required>
+            <input name="dpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background:  #16a085; border:0; outline:none; border-radius:30px;"> Register </button>
+          </form>
         </div>
     </div>
 </div>
 
-<div id="example4">
-   <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
-  
-        <div class="form-box" style="width: 480px;height: 580px;position: relative;margin-left:1085px; margin-top:-788px;background: white;padding:5px;border:5px; overflow: hidden; opacity:0.9 ">
-		    <label style="font-size:25px; margin-left:200px;margin-top:500px;"> Admin </label>
-				<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
-					<div id="btn2" style="top:0; left:0; position:absolute; width:410px; height:100%; border-radius:30px; background: pink; transition: .5s;"> </div>
-                         <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px; text-align:right;" onclick="logina()"> Login </button>
-                         
-				</div>
-				<form  action="/loginAdmin" method="post" id = "login2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input name="adminemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter UnserNmae Here" required>
-				    <input name="adminpw" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				    <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: pink; border:0; outline:none; border-radius:30px;"> Log in </button>
-				</form>
-			
-			
+  <div id="example4">
+  <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
+    <div class="form-box" style="margin-left:1085px; margin-top:-802px;">
+		  <label style="font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Admin </label>
+      <hr>
+			<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radius:30px;text-align:center;">
+				<div id="btn2" style="top:0; left:0; position:absolute; width:410px; height:100%; border-radius:30px; background:  #16a085; transition: .5s;"> </div>
+          <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:150px;font-size:20px; " onclick="logina()"> Login </button>
         </div>
+				<form  action="/loginAdmin" method="post" id = "login2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+					<input name="adminemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+				  <input name="adminpw" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+          <br> <br>
+				  <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: #16a085; border:0; outline:none; border-radius:30px;"> Log in </button>
+				</form>
+			</div>
     </div>
-    </div>
+  </div>
 </div>
+
 <script>
  var x = document.getElementById("login");
  var y = document.getElementById("register");
