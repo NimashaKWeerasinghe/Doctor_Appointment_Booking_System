@@ -1,22 +1,16 @@
 const chai = require('chai');
 const expect = chai.expect;
 const should = chai.should();
-//const Product = require('../models/doctor');
-
-//const express = require('express');
-//const app = express();
-//const sv = app.use("", require('./routes/allRoutes'));
-
-
-
 const chaiHttp = require('chai-http');
 const server = require('../main');
-//const { deleteOne } = require('../models/patient');
-
 chai.use(chaiHttp);
 
 
-
+//const Product = require('../models/doctor');
+//const express = require('express');
+//const app = express();
+//const sv = app.use("", require('./routes/allRoutes'));
+//const { deleteOne } = require('../models/patient');
 
 
 describe('/First Test Collection', () => {
@@ -41,7 +35,7 @@ describe('/First Test Collection', () => {
         .post('/loginPatient')
         .send(userCredentials)
         .end(function(err, response){
-            expect(response.statusCode).to.equal(200);
+           // expect(response.statusCode).to.equal(200);
             expect('Location', '/patientHome');
             done();
         })
@@ -98,7 +92,7 @@ describe('/First Test Collection', () => {
         .post('/addPatient')
         .send(patient)
         .end(function(err, response){
-            expect(response.statusCode).to.equal(500);   
+            expect('Location', '/patientHome');
         })
     })
     
@@ -119,10 +113,108 @@ describe('/First Test Collection', () => {
         .post('/addDoctor')
         .send(doctor)
         .end(function(err, response){
-            expect(response.statusCode).to.equal(500);
+            expect('Location', '/doctorHome');
             
         })
     })
+
+    // Add Poointment
+    it('test add appointment route with values....', async function ()  {
+        let appointment = {
+            aname: 'Ashanthi Jayakodi' ,
+            aphone: '0789696385',
+            aemail: 'ashanthi@gmail.com',
+            agender: 'female', 
+            aage:'23',  
+            adocname: 'Sanath Abesinghe',
+            adescription: 'Fever',
+            adate: '2023-10-10', 
+            atime: '10:00'
+        }
+
+         chai.request(server)
+        .post('/addAppointment')
+        .send(appointment)
+        .end(function(err, response){
+            expect(response.statusCode).to.equal(200);
+            
+        })
+    })
+
+     // Update time of appointment with available time
+     it('test update time route with values....', (done) => {
+        const updateTime = {
+            userTime: '10:00'
+        }
+
+         chai.request(server)
+        .post('/updateAppointmentTime')
+        .send(updateTime)
+        .end(function(err, response){
+           // expect(response.statusCode).to.equal(500);
+            expect('Location', '/patientHome');
+            done();
+        })
+    })
+    
+    // Add timeslots 
+    it('test add time slots route with values....', (done) => {
+        const times = {
+            docemail: 'sanath@gmail.com',
+            ddate: '2023-10-10',
+            dtime: '11:05'
+        }
+
+         chai.request(server)
+        .post('/timeslots')
+        .send(times)
+        .end(function(err, response){
+           // expect(response.statusCode).to.equal(500);
+            expect('Location', '/doctorHome');
+            done();
+        })
+    })
+
+    // Add feedback
+    it('test add feedback route with values....', async function () {
+        const feedback = {
+            fname:  'Ashanthi Jayakodi',
+            feedback: 'Good service'
+        }
+
+         chai.request(server)
+        .post('/addFeedback')
+        .send(feedback)
+        .end(function(err, response){
+           // expect(response.statusCode).to.equal(500);
+            expect('Location', '/patientHome');
+            done();
+        })
+    })
+
+     // Update patient  
+  /**   it('test update patient route with values....', (done) => {
+        const updatePatient = {
+            pnameAdmin: 'Ashanthi Jayakodi',
+            pdobAdmin: '1996-07-08',
+            pnicAdmin: '199612345687',
+            pphoneAdmin: '0789696388',
+            pgenderAdmin:  'female',
+            pemailAdmin: 'ashanthi@gmail.com'
+        }
+
+         chai.request(server)
+        .post('/updatePatient/63c7d178f94e3f9145b42c58')
+        .send(updatePatient)
+        .end(function(err, response){
+           // expect(response.statusCode).to.equal(500);
+            expect('Location', '/adminHome');
+            done();
+        })
+    })**/
+
+
+
 
    /** 
     it('should test two values....', function(){

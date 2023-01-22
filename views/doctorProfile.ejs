@@ -1,11 +1,10 @@
 <html>
 <head> 
-    <title> Doctor Profile </title>
+    <title>My Doctor </title>
+	<link rel="icon" type="image/x-icon" href="heart.png">
     <!-- Font Awesome -->
 <link
-  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-  rel="stylesheet"
-/>
+  href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet"/>
 <!-- Google Fonts -->
 <link
   href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -17,14 +16,17 @@
   rel="stylesheet"
 />
 </head>
-<body class="bg-light">
+<body class="bg-light" style="background-color:#e8fbff;">
     <div class="row d-flex justify-content-center">
-        <div class="col-md-10 mt-5 pt-5">
+        <div class="col-md-10 mt-5 pt-5" style="box-shadow: 5px 10px #888888; color:#4873b8;">
             <div class="row z-depth-3"> 
                 <div class="col-sm-4 bg-info rounded-left">
-                    <div class="card-block text-center text-white">
+                    <div class="card-block text-center text-white" style="height:350px;">
                         <i class="fas fa-user-tie fa-7x mt-5"> </i>
+                        <br> <br> <br>
                         <h2 class="font-weight-bold mt=4">  <%= doctorsDetails.dname %> </h2>
+                        
+                        <a href="/logout" class="btn" style="background:#d5e6eb;width:200px;height:44px;color:#3f6abf;font-size:17px;text-align:center;margin-right:-10px;border:#a5dbe8;" onMouseOver="this.style.color='blue'" onMouseOut="this.style.color='#3f6abf'"> Log out </a>
                            
                          
                     </div>
@@ -50,7 +52,7 @@
                             <h6 class="text-muted" style="font-size:20px;"> <%= doctorsDetails.experience %>  </h6>
                         </div>
                     </div> 
-                    <h4 class="mt-3"> Projects </h4>
+                    
                     <hr class="bg-primary">
                     
                 </div>

@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+
+<title> My Doctor </title>
+<link rel="icon" type="image/x-icon" href="heart.png">
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-	<!-- Boxicons -->
 	<link href='https://unpkg.com/boxicons@2.0.9/css/boxicons.min.css' rel='stylesheet'>
-	
-	
+
 	
 	<style>
 	
@@ -113,6 +113,7 @@ body.dark {
 body {
 	background: var(--grey);
 	overflow-x: hidden;
+	font-family: "Helvetica";
 }
 
 
@@ -355,15 +356,7 @@ body {
 
 
 
-
-
-
 /* CONTENT */
-
-
-
-
-
 
 
 
@@ -436,6 +429,41 @@ body {
 </style>
 
 <script>
+
+window.onload = function() {
+
+  // Get references to elements on the page.
+  var editPat = document.getElementById('editPat');
+  var messagespat = document.getElementById('messagespat');
+
+  
+  // Create a new WebSocket.
+  var socket = new WebSocket('ws://localhost:5000');
+
+
+  // Handle any errors that occur.
+  socket.onerror = function(error) {
+    console.log('WebSocket Error: ' + error);
+  };
+
+  editPat.onsubmit = function(e) {
+   
+    say = "Patient Updated Successfully "
+    messagespat.innerHTML += say ;
+
+     let tID = setTimeout(function () {
+            window.location.href = "http://localhost:5000/adminHome";
+            window.clearTimeout(tID);		// clear time out.
+        }, 3000);
+  };
+    
+   socket.close();
+   socket.onclose = function(event) {
+        consectetur.log("Webscoket Closed")
+};
+
+}
+
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 allSideMenu.forEach(item=> {
@@ -462,50 +490,31 @@ menuBar.addEventListener('click', function () {
 
 </script>
 
-	<title>AdminHub</title>
+
 </head>
-<body>
+<body style="background:#caecfa">
 
 
 	<!-- SIDEBAR -->
 	<section id="sidebar">
 		<a href="#" class="brand">
-			<i class='bx bxs-smile'></i>
-			<span class="text">MyDoctor Admin</span>
+			<i class='bx bxs-heart'></i>
+			<span class="text" style="font-size:27px;">MyDoctor Admin</span>
 		</a>
-		<ul class="side-menu top">
-			<li class="active">
-				<a href="#">
+		<ul class="side-menu top" style="margin-top:12px;">
+			<li>
+				<a href="/adminHome">
 					<i class='bx bxs-dashboard' ></i>
-					<span class="text">Dashboard</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-shopping-bag-alt' ></i>
-					<span class="text">Patients</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-doughnut-chart' ></i>
-					<span class="text">Doctors</span>
-				</a>
-			</li>
-			<li>
-				<a href="#">
-					<i class='bx bxs-message-dots' ></i>
-					<span class="text">Appointments</span>
+					<span class="text"v style="font-size:22px;">Dashboard</span>
 				</a>
 			</li>
 			
-		</ul>
-		<ul class="side-menu">
+		
 			
 			<li>
-				<a href="#" class="logout">
+				<a href="/logout" class="logout">
 					<i class='bx bxs-log-out-circle' ></i>
-					<span class="text">Logout</span>
+					<span class="text" style="font-size:22px;">Logout</span>
 				</a>
 			</li>
 		</ul>
@@ -518,25 +527,19 @@ menuBar.addEventListener('click', function () {
 	<section id="content">
 		<!-- NAVBAR -->
 		<nav>
-			<i class='bx bx-menu' ></i>
-			<a href="#" class="nav-link">Categories</a>
+			
 			
 		</nav>
 		<!-- NAVBAR -->
-        <div style="width: 100%;
-    max-width: 850px;
-	height:650px;
-    background: #b6dadb;
-    padding: 28px;
-    margin: 0 28px;
-    border-radius: 10px;
-    box-shadow: inset -2px 2px 2px white;margin-left:200px;margin-top:20px;">
+        <div style="width: 100%; max-width: 850px; height:650px; background: #b0cbd6; padding: 28px; border-radius: 10px;box-shadow: inset -2px 2px 2px white;margin-left:300px;margin-top:30px;">
 	
-	 <h1 style="text-align:center;">Edit Patient <%= patientForAdmin.pname %></h1>
+	 <h1 style="text-align:center;">Edit Patient - <%= patientForAdmin.pname %></h1>
 	 <br>
 	 <hr>
-	 <br> <br>
-	  <form action="/updatePatient/<%= patientForAdmin._id %>" method="post">
+	 <br> 
+	 <p style="color:#151ceb;font-size:20px; margin-top:15px; margin-left:270px;font-weight: bold;" id="messagespat"></p>
+	 <br>
+	  <form action="/updatePatient/<%= patientForAdmin._id %>" method="post" id="editPat">
   <div class="row">
     <div class="col-25">
       <label for="fname">Full Name</label>
@@ -592,7 +595,7 @@ menuBar.addEventListener('click', function () {
   </div>
   <br>
   <div class="row">
-    <input type="submit" value="Submit" style="margin-right:500px">
+    <input type="submit" value="Submit" style="margin-right:350px; background:#78caeb; color:black;width:100px;height:50px;font-size:18px; border: 2px black;">
   </div>
   </form>
 	

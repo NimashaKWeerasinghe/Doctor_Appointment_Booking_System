@@ -10,21 +10,21 @@ const PORT = process.env.PORT || 4000;
 const server = require('http').createServer(app);
 const WebSocket = require('ws');
 
-const wss = new WebSocket.Server({server:server});
+const wss = new WebSocket.Server({ server: server });
 
 //mongoose.set('strictQuery', false);
 
 //Databse Connection
-mongoose.connect(process.env.DB_URL,{useNewUrlParser:true, useUnifiedTopology:true});
+mongoose.connect(process.env.DB_URL, { useNewUrlParser: true, useUnifiedTopology: true });
 const db = mongoose.connection;
 db.on('error', (error) => console.log(error));
-db.once('open',() => console.log('Database Connected') );
+db.once('open', () => console.log('Database Connected'));
 
 app.use(express.static(__dirname + '/assests/images'));
 app.use(express.static(__dirname + '/assests/css'));
 
 //Milddlewares
-app.use(express.urlencoded({extended: false}));
+app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
 
 app.use(session({
@@ -33,7 +33,7 @@ app.use(session({
     resave: false,
 }));
 
-app.use((req,res,next) =>{
+app.use((req, res, next) => {
     res.locals.message = req.session.message;
     delete req.session.message;
     next();
@@ -48,11 +48,26 @@ app.use("", require('./routes/allRoutes'));
 module.exports = server
 
 
-app.get('/patientHome', (req,res) => {
+app.get('/patientHome', (req, res) => {
     res.render("patientHome.ejs")
 });
 
-server.listen(PORT, () =>{
+
+wss.on('connection', function connection(ws) {
+    console.log('New Web Socket Connection')
+
+    ws.on('message', function incoming(message) {
+        console.log("received %s", message)
+
+    })
+})
+
+
+server.listen(PORT, () => {
     console.log('Server started at http://localhost:5000');
 
 });
+
+
+
+

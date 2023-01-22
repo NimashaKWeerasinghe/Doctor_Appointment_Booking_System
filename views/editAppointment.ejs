@@ -405,6 +405,42 @@ body {
 
 <script>
 
+
+window.onload = function() {
+
+  // Get references to elements on the page.
+  var formEditApp = document.getElementById('editApp');
+  var messagesapp = document.getElementById('messagesapp');
+
+  
+  // Create a new WebSocket.
+  var socket = new WebSocket('ws://localhost:5000');
+
+
+  // Handle any errors that occur.
+  socket.onerror = function(error) {
+    console.log('WebSocket Error: ' + error);
+  };
+
+  formEditApp.onsubmit = function(e) {
+   
+    say = "Appointment Updated Successfully "
+    messagesapp.innerHTML += say ;
+
+     let tID = setTimeout(function () {
+            window.location.href = "http://localhost:5000/adminHome";
+            window.clearTimeout(tID);		// clear time out.
+        }, 4000);
+  };
+    
+   socket.close();
+   socket.onclose = function(event) {
+        consectetur.log("Webscoket Closed")
+};
+
+}
+
+
 const allSideMenu = document.querySelectorAll('#sidebar .side-menu.top li a');
 
 allSideMenu.forEach(item=> {
@@ -431,52 +467,34 @@ menuBar.addEventListener('click', function () {
 
 </script>
 
-<title>AdminHub</title>
+<title>My Doctor </title>
+<link rel="icon" type="image/x-icon" href="heart.png">
 
 </head>
 
-<body>
+<body style="background:#caecfa">
 
 
 <!-- SIDEBAR -->
 <section id="sidebar">
 	<a href="#" class="brand">
-		<i class='bx bxs-smile'></i>
-		<span class="text">MyDoctor Admin</span>
+		<i class='bx bxs-heart'></i>
+		<span class="text" style="font-size:27px;">MyDoctor Admin</span>
 	</a>
-	<ul class="side-menu top">
-		<li class="active">
+	<ul class="side-menu top" style="margin-top:12px;">
+		<li>
 		    <a href="#">
 		        <i class='bx bxs-dashboard' ></i>
-		        <span class="text">Dashboard</span>
+		        <span class="text" style="font-size:22px;">Dashboard</span>
 		   </a>
 		</li>
-		<li>
-			<a href="#">
-				<i class='bx bxs-shopping-bag-alt' ></i>
-				<span class="text">Patients</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class='bx bxs-doughnut-chart' ></i>
-				<span class="text">Doctors</span>
-			</a>
-		</li>
-		<li>
-			<a href="#">
-				<i class='bx bxs-message-dots' ></i>
-				<span class="text">Appointments</span>
-			</a>
-		</li>
-			
-	</ul>
+		
 
-	<ul class="side-menu">
+	
 		<li>
-			<a href="#" class="logout">
+			<a href="/logout" class="logout">
 				<i class='bx bxs-log-out-circle' ></i>
-				<span class="text">Logout</span>
+				<span class="text" style="font-size:22px;">Logout</span>
 			</a>
 		</li>
 	</ul>
@@ -487,18 +505,18 @@ menuBar.addEventListener('click', function () {
 <section id="content">
 <!-- NAVBAR -->
 	<nav>
-		<i class='bx bx-menu' ></i>
-		<a href="#" class="nav-link">Categories</a>
+		
 	</nav>
 <!-- NAVBAR -->
 
-    <div style="width: 100%; max-width: 850px; height:650px; background: #b6dadb; padding: 28px; margin: 0 28px; border-radius: 10px; box-shadow: inset -2px 2px 2px white;margin-left:200px;margin-top:20px;">
+    <div style="width: 100%; max-width: 850px; height:800px; background: #b0cbd6; padding: 28px; margin: 0 28px; border-radius: 10px; box-shadow: inset -2px 2px 2px white;margin-left:290px;margin-top:20px;">
 	    <h1 style="text-align:center;">Edit Appointments - <%= appForAdmin.aname %></h1>
 	    <br>
 	    <hr>
 	    <br>
+		<p style="color:red;font-size:20px; margin-top:15px; margin-left:270px;font-weight: bold;" id="messagesapp"></p>
         <br>
-	    <form action="/updateAppointment/<%= appForAdmin._id %>" method="post">
+	    <form action="/updateAppointment/<%= appForAdmin._id %>" method="post" id="editApp">
             <div class="row">
                 <div class="col-25">
                     <label for="fname">Full Name</label>
@@ -581,8 +599,9 @@ menuBar.addEventListener('click', function () {
             </div>
             <br>
             <div class="row">
-                <input type="submit" value="Submit" style="margin-right:500px">
+                <input type="submit" value="Submit"style="margin-right:350px; background:#78caeb; color:black;width:100px;height:50px;font-size:18px;">
             </div>
+			 
         </form>
     </div>
 </section>

@@ -4,8 +4,8 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive hospital website design </title>
-
+    <title>My Doctor </title>
+	<link rel="icon" type="image/x-icon" href="heart.png">
     <!-- font awesome cdn link  -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
@@ -17,7 +17,7 @@
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
 :root{
-    --green:#16a085;
+    --green:#3f6abf;
     --black:#444;
     --light-color:#777;
     --box-shadow:.5rem .5rem 0 rgba(22, 160, 133, .2);
@@ -47,7 +47,7 @@ section{
 }
 
 section:nth-child(even){
-    background: #f5f5f5;
+    background: #bde7f0;
 }
 
 .heading{
@@ -173,104 +173,6 @@ section:nth-child(even){
     padding: 1rem 0;
 }
 
-.icons-container{
-    display: grid;
-    gap:2rem;
-    grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
-    padding-top: 5rem;
-    padding-bottom: 5rem;
-}
-
-.icons-container .icons{
-    border:var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    text-align: center;
-    padding: 2.5rem;
-}
-
-.icons-container .icons i{
-    font-size: 4.5rem;
-    color:var(--green);
-    padding-bottom: .7rem;
-}
-
-.icons-container .icons h3{
-    font-size: 4.5rem;
-    color:var(--black);
-    padding: .5rem 0;
-    text-shadow: var(--text-shadow);
-}
-
-.icons-container .icons p{
-    font-size: 1.7rem;
-    color:var(--light-color);
-}
-
-.services .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
-}
-
-.services .box-container .box{
-    background:#fff;
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    border:var(--border);
-    padding: 2.5rem;
-}
-
-.services .box-container .box i{
-    color: var(--green);
-    font-size: 5rem;
-    padding-bottom: .5rem;
-}
-
-.services .box-container .box h3{
-    color: var(--black);
-    font-size: 2.5rem;
-    padding:1rem 0;
-}
-
-.services .box-container .box p{
-    color: var(--light-color);
-    font-size: 1.4rem;
-    line-height: 2;
-}
-
-.about .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:2rem;
-}
-
-.about .row .image{
-    flex:1 1 45rem;
-}
-
-.about .row .image img{
-    width: 100%;
-}
-
-.about .row .content{
-    flex:1 1 45rem;
-}
-
-.about .row .content h3{
-    color: var(--black);
-    text-shadow: var(--text-shadow);
-    font-size: 4rem;
-    line-height: 1.8;
-}
-
-.about .row .content p{
-    color: var(--light-color);
-    padding:1rem 0;
-    font-size: 1.5rem;
-    line-height: 1.8;
-}
 
 .doctors .box-container{
     display: grid;
@@ -372,128 +274,6 @@ section:nth-child(even){
     padding:1rem 4rem;
 }
 
-.review .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
-}
-
-.review .box-container .box{
-    border:var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    padding:2.5rem;
-    background: #fff;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.review .box-container .box img{
-    height: 10rem;
-    width: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border:.5rem solid #fff;
-}
-
-.review .box-container .box h3{
-    color:#fff;
-    font-size: 2.2rem;
-    padding:.5rem 0;
-}
-
-.review .box-container .box .stars i{
-    color:#fff;
-    font-size: 1.5rem;
-}
-
-.review .box-container .box .text{
-    color:var(--light-color);
-    line-height: 1.8;
-    font-size: 1.6rem;
-    padding-top: 4rem;
-}
-
-.review .box-container .box::before{
-    content: '';
-    position: absolute;
-    top:-4rem; left: 50%;
-    transform:translateX(-50%);
-    background:var(--green);
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    height: 25rem;
-    width: 120%;
-    z-index: -1;
-}
-
-.blogs .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:2rem;
-}
-
-.blogs .box-container .box{
-    border:var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    padding: 2rem;
-}
-
-.blogs .box-container .box .image{
-    height: 20rem;
-    overflow:hidden;
-    border-radius: .5rem;
-}
-
-.blogs .box-container .box .image img{
-    height: 100%;
-    width: 100%;
-    object-fit: cover;
-}
-
-.blogs .box-container .box:hover .image img{
-    transform:scale(1.2);
-}
-
-.blogs .box-container .box .content{
-    padding-top: 1rem;
-}
-
-.blogs .box-container .box .content .icon{
-    padding: 1rem 0;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-}
-
-.blogs .box-container .box .content .icon a{
-    font-size: 1.4rem;
-    color: var(--light-color);
-}
-
-.blogs .box-container .box .content .icon a:hover{
-    color:var(--green);
-}
-
-.blogs .box-container .box .content .icon a i{
-    padding-right: .5rem;
-    color: var(--green);
-}
-
-.blogs .box-container .box .content h3{
-    color:var(--black);
-    font-size: 3rem;
-}
-
-.blogs .box-container .box .content p{
-    color:var(--light-color);
-    font-size: 1.5rem;
-    line-height: 1.8;
-    padding:1rem 0;
-}
 
 .footer .box-container{
     display: grid;
@@ -609,6 +389,7 @@ section:nth-child(even){
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
   width: 100%;
+  font-size:18px;
 }
 
 #customers td, #customers th {
@@ -624,13 +405,47 @@ section:nth-child(even){
   padding-top: 12px;
   padding-bottom: 12px;
   text-align: left;
-  background-color: #04AA6D;
+  background-color: #3f6abf;
   color: white;
 }
 
 </style>
 
 <script>
+
+
+window.onload = function() {
+
+  // Get references to elements on the page.
+  var formts = document.getElementById('formTimeSlot');
+  var messagesdoc = document.getElementById('messagesdoc');
+
+  
+  // Create a new WebSocket.
+  var socket = new WebSocket('ws://localhost:5000');
+
+
+  // Handle any errors that occur.
+  socket.onerror = function(error) {
+    console.log('WebSocket Error: ' + error);
+  };
+
+  formts.onsubmit = function(e) {
+   
+    say = "Time Slot Added Successfully "
+    messagesdoc.innerHTML += say ;
+
+     let tID = setTimeout(function () {
+            window.location.href = "http://localhost:5000/doctorHome";
+            window.clearTimeout(tID);		// clear time out.
+        }, 3000);
+  };
+
+   socket.onclose = function(event) {
+        consectetur.log("Webscoket Closed")
+};
+
+}
 
 let menu = document.querySelector('#menu-btn');
 let navbar = document.querySelector('.navbar');
@@ -663,9 +478,7 @@ function myFunction() {
 }
 
 
-function  myfun(){
-    window.alert("Time Slot Added");
-}
+
 
 </script>
 
@@ -674,22 +487,18 @@ function  myfun(){
     
 <!-- header section starts  -->
 
-<header class="header">
+<header class="header" style=" background: #e8fbff;">
 
-    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> medcare. </a>
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> My<span style="color:black;"> Doctor</span>  </a>
 
     <nav class="navbar">
-        <a href="#home">home</a>
-        <a href="#services">services</a>
-        <a href="#about">about</a>
-        <a href="#doctors">doctors</a>
-        <a href="#book">book</a>
-        <a href="#review">review</a>
-        <a href="#blogs">blogs</a>
-        <a href="/doctorProfile" class="btn"> <%= docDetalisArray.dname %> <span class="fas fa-chevron-right"></span> </a>
-        <a href="/logout" class="btn"> Log out <span class="fas fa-chevron-right"></span> </a>
+        <a href="#home" style="color:black;font-size:22px;">home</a>
+        <a href="#doctors" style="color:black;font-size:22px;">doctors</a>
+        <a href="#book" style="color:black;font-size:22px;">Time Slots</a>
+        <a href="#review" style="color:black;font-size:22px;">Appointments</a>
+        <a href="/doctorProfile" class="btn" style=" font-weight: bold;width:230px;height:44px;color:#3f6abf;font-size:17px; text-align:center;"  onMouseOver="this.style.color='white'" onMouseOut="this.style.color='#3f6abf'">Dr <%= docDetalisArray.dname %> </a>
+        <a href="/logout" class="btn" style="width:100px;height:44px;color:#3f6abf;font-size:17px;text-align:center;margin-right:-90px;"  onMouseOver="this.style.color='white'" onMouseOut="this.style.color='#3f6abf'"> Log out  </a>
     </nav>
-
     <div id="menu-btn" class="fas fa-bars"></div>
 
 </header>
@@ -701,89 +510,47 @@ function  myfun(){
 <section class="home" id="home">
 
     <div class="image">
-        <img src="home.jpg" alt="">
+        <img style="mix-blend-mode: multiply;" src="login3.jpg" alt="">
     </div>
 
     <div class="content">
-        <h3>stay safe, stay healthy</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sed autem vero? Magnam, est laboriosam!</p>
-        <a href="#" class="btn"> contact us <span class="fas fa-chevron-right"></span> </a>
+        <h3>"Medicines cure diseases, but only doctors can cure patients"</h3>
+       <p> Check the Appointments and Select Date and Time for Appointments, Anywhere Anytime.</p>
     </div>
 
 </section>
 
 <!-- home section ends -->
 
-
-
-
-
-<!-- about section starts  -->
-
-<section class="about" id="about">
-
-    <h1 class="heading"> <span>about</span> us </h1>
-
-    <div class="row">
-
-        <div class="image">
-            <img src="image/about-img.svg" alt="">
-        </div>
-
-        <div class="content">
-            <h3>we take care of your healthy life</h3>
-            <p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Iure ducimus, quod ex cupiditate ullam in assumenda maiores et culpa odit tempora ipsam qui, quisquam quis facere iste fuga, minus nesciunt.</p>
-            <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Natus vero ipsam laborum porro voluptates voluptatibus a nihil temporibus deserunt vel?</p>
-            <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- about section ends -->
-
 <!-- doctors section starts  -->
 
-<section class="doctors" id="doctors">
+<section class="doctors" id="doctors" style=" background: #e8fbff;">
 
-     <h1 class="heading"> our <span>doctors</span> </h1>
-   <% if(doctors != ''){ %>
+    <h1 class="heading"> our <span>doctors</span> </h1>
+    <% if(doctors != ''){ %>
     <div class="box-container">
-     <% for(var i = 0; i< doctors.length; i++) {%> 
+        <% for(var i = 0; i< doctors.length; i++) {%> 
         <div class="box">
             <img src="docprofile.jpg" alt="">
-	
-                 
-            <h3 id="dname"><%= doctors[i].dname%></h3>
-            
+	        <h3 id="dname"><%= doctors[i].dname%></h3>
                 <span><%= doctors[i].special%></span> <br>
                 <span><%= doctors[i].experience%></span>
                 <div class="share">
-               
                 </div>
              
-              
         </div>
-      <% } %>
+       <% } %>
 
-        <% }else { %>
-                <h1> No records </h1>
-           <% } %>
-        
-
-        
-
-        
-    </div>
+    <% }else { %>
+        <h1> No records </h1>
+    <% } %>
+</div>
 
 </section>
 
 <!-- doctors section ends -->
 
 <!-- Time Slots section starts   -->
-
-
 
 <section class="book" id="book">
 
@@ -792,67 +559,67 @@ function  myfun(){
     <div class="row">
 
         <div class="image">
-            <img src="image/book-img.svg" alt="">
+            <img src="time.jpg" style="mix-blend-mode: multiply;" alt="">
         </div>
 
-        <form action="/timeslots" method="post" id="formId">
+        <form action="/timeslots" method="post" id="formTimeSlot">
             <h3>Add Time Slots</h3>
-            
-           
-            <input name="ddate" type="date" class="box" placeholder="Enter Date" class="box">
-            <input name="dtime" type="time" class="box" placeholder="Enter Time" class="box">
+            <p style="color:#3fb4eb;font-size:23px; font-weight: bold;" id="messagesdoc"></p>
+            <input title="Enter Date" name="ddate" type="date" class="box" placeholder="Enter Date" class="box">
+            <input title="Enter Time" name="dtime" type="time" class="box" placeholder="Enter Time" class="box">
             <input type="submit" value="Add Time Slot" class="btn" onclick="myfun()">
-             
         </form>
             
-      
     </div>
 
 </section>
 
-<!-- booking section ends -->
+<!-- Time Slots ends -->
 
 <!-- Appointments section starts  -->
 
-<section class="review" id="review">
+<section class="review" id="review" style=" background: #e8fbff;">
     
     <h1 class="heading"> View <span>Appointment</span> </h1>
 
     <div class="box-container">
-     <% if(appArray != ''){ %>
+        <% if(appArray != ''){ %>
       
-      <table id="customers">
-  <tr>
-    <th>NO</th>
-    <th>Name</th>
-    <th>Phone</th>
-    <th>Gender</th>
-    <th>Age</th>
-    <th>Description</th>
-    <th>Date</th>
-    <th>Time</th>
-  </tr>
+            <table id="customers">
+                <tr style="background:#3f6abf;">
+                    <th>NO</th>
+                    <th>Name</th>
+                    <th>Phone</th>
+                    <th>Gender</th>
+                    <th>Age</th>
+                    <th>Description</th>
+                    <th>Date</th>
+                    <th>Time</th>
+                    <th>Profile</th>
+                </tr>
 
-   <% for(var i = 0; i< appArray.length; i++) {%> 
-  <tr>
-    <td><%= i+1 %></td>
-    <td><%= appArray[i].aname%> </td>
-    <td><%= appArray[i].aphone%></td>
-    <td><%= appArray[i].agender%></td>
-    <td><%= appArray[i].aage%></td>
-    <td><%= appArray[i].adescription%> </td>
-    <td><%= appArray[i].adate%> </td>
-    <td><%= appArray[i].atime%> </td>
-  </tr>
-  
- 
-
- <% } %>
- </table>
+                <% for(var i = 0; i< appArray.length; i++) {%> 
+                <tr>
+                    <td><%= i+1 %></td>
+                    <td><%= appArray[i].aname%> </td>
+                    <td><%= appArray[i].aphone%></td>
+                    <td><%= appArray[i].agender%></td>
+                    <td><%= appArray[i].aage%></td>
+                    <td><%= appArray[i].adescription%> </td>
+                    <td><%= appArray[i].adate%> </td>
+                    <td><%= appArray[i].atime%> </td>
+                    <td>
+						<a href="/profilePatient/<%= appArray[i].aemail %>" style="margin:auto;display: block;width: 115px;height: 30px;background: #79bfed;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+							Profile
+						</a>
+					</td>
+                </tr>
+                <% } %>
+            </table>
 
         <% }else { %>
                 <h1> No records </h1>
-           <% } %>
+        <% } %>
 
     </div>
 
@@ -860,64 +627,6 @@ function  myfun(){
 
 <!-- Appointments section ends -->
 
-<!-- blogs section starts  -->
-
-<section class="blogs" id="blogs">
-
-    <h1 class="heading"> our <span>blogs</span> </h1>
-
-    <div class="box-container">
-
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-1.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icon">
-                    <a href="#"> <i class="fas fa-calendar"></i> 1st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blog title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, eius.</p>
-                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-2.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icon">
-                    <a href="#"> <i class="fas fa-calendar"></i> 1st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blog title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, eius.</p>
-                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-            </div>
-        </div>
-
-        <div class="box">
-            <div class="image">
-                <img src="image/blog-3.jpg" alt="">
-            </div>
-            <div class="content">
-                <div class="icon">
-                    <a href="#"> <i class="fas fa-calendar"></i> 1st may, 2021 </a>
-                    <a href="#"> <i class="fas fa-user"></i> by admin </a>
-                </div>
-                <h3>blog title goes here</h3>
-                <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Provident, eius.</p>
-                <a href="#" class="btn"> learn more <span class="fas fa-chevron-right"></span> </a>
-            </div>
-        </div>
-
-    </div>
-
-</section>
-
-<!-- blogs section ends -->
 
 <!-- footer section starts  -->
 
@@ -925,43 +634,18 @@ function  myfun(){
 
     <div class="box-container">
 
-        <div class="box">
-            <h3>quick links</h3>
-            <a href="#"> <i class="fas fa-chevron-right"></i> home </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> services </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> about </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> doctors </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> book </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> review </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> blogs </a>
-        </div>
-
-        <div class="box">
-            <h3>our services</h3>
-            <a href="#"> <i class="fas fa-chevron-right"></i> dental care </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> message therapy </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> cardioloty </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> diagnosis </a>
-            <a href="#"> <i class="fas fa-chevron-right"></i> ambulance service </a>
-        </div>
-
-        <div class="box">
+        <div class="box" style="margin-left:370px;">
             <h3>contact info</h3>
-            <a href="#"> <i class="fas fa-phone"></i> +123-456-7890 </a>
-            <a href="#"> <i class="fas fa-phone"></i> +111-222-3333 </a>
-            <a href="#"> <i class="fas fa-envelope"></i> shaikhanas@gmail.com </a>
-            <a href="#"> <i class="fas fa-envelope"></i> anasbhai@gmail.com </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> mumbai, india - 400104 </a>
+            <a href="#"> <i class="fas fa-phone"></i> +9411 1252123 </a>
+            <a href="#"> <i class="fas fa-envelope"></i> Mydoctorchanel@gmail.com </a>
+            <a href="#"> <i class="fas fa-map-marker-alt"></i> Pitipana, Homagama </a>
         </div>
 
-        <div class="box">
+        <div class="box" style="margin-left:150px;">
             <h3>follow us</h3>
             <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
             <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
             <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-            <a href="#"> <i class="fab fa-linkedin"></i> linkedin </a>
-            <a href="#"> <i class="fab fa-pinterest"></i> pinterest </a>
         </div>
 
     </div>

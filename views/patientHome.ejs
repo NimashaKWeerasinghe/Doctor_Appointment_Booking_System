@@ -1,408 +1,415 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>complete responsive hospital website design </title>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Doctor </title>
+  <link rel="icon" type="image/x-icon" href="heart.png">
 
-    <!-- font awesome cdn link  -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <!-- font awesome cdn link  -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
 
-    <!-- custom css file link  -->
-    <link rel="stylesheet" href="css/style.css">
+  <!-- custom css file link  -->
+  <link rel="stylesheet" href="css/style.css">
 
-    <style>
-
+  <style>
     @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-:root{
-    --green:#16a085;
-    --black:#444;
-    --light-color:#777;
-    --box-shadow:.5rem .5rem 0 rgba(22, 160, 133, .2);
-    --text-shadow:.4rem .4rem 0 rgba(0, 0, 0, .2);
-    --border:.2rem solid var(--green);
-}
+    :root {
+      --green: #3f6abf;
+      --black: #444;
+      --light-color: #777;
+      --box-shadow: .5rem .5rem 0 rgba(22, 160, 133, .2);
+      --text-shadow: .4rem .4rem 0 rgba(0, 0, 0, .2);
+      --border: .2rem solid var(--green);
+    }
 
-*{
-    font-family: 'Poppins', sans-serif;
-    margin:0; padding: 0;
-    box-sizing: border-box;
-    outline: none; border: none;
-    text-transform: capitalize;
-    transition: all .2s ease-out;
-    text-decoration: none;
-}
+    * {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      outline: none;
+      border: none;
+      text-transform: capitalize;
+      transition: all .2s ease-out;
+      text-decoration: none;
+    }
 
-html{
-    font-size: 62.5%;
-    overflow-x: hidden;
-    scroll-padding-top: 7rem;
-    scroll-behavior: smooth;
-}
+    html {
+      font-size: 62.5%;
+      overflow-x: hidden;
+      scroll-padding-top: 7rem;
+      scroll-behavior: smooth;
+    }
 
-section{
-    padding:2rem 9%;
-}
+    section {
+      padding: 2rem 9%;
+    }
 
-section:nth-child(even){
-    background: #b4c1c2;
-}
+    section:nth-child(even) {
+      background: #bde7f0;
+    }
 
-.heading{
-    text-align: center;
-    padding-bottom: 2rem;
-    text-shadow: var(--text-shadow);
-    text-transform: uppercase;
-    color:var(--black);
-    font-size: 5rem;
-    letter-spacing: .4rem;
-}
+    .heading {
+      text-align: center;
+      padding-bottom: 2rem;
+      text-shadow: var(--text-shadow);
+      text-transform: uppercase;
+      color: var(--black);
+      font-size: 5rem;
+      letter-spacing: .4rem;
+    }
 
-.heading span{
-    text-transform: uppercase;
-    color:var(--green);
-}
+    .heading span {
+      text-transform: uppercase;
+      color: var(--green);
+    }
 
-.btn{
-    display: inline-block;
-    margin-top: 1rem;
-    padding: .5rem;
-    padding-left: 1rem;
-    border:var(--border);
-    border-radius: .5rem;
-    box-shadow: var(--box-shadow);
-    color:var(--green);
-    cursor: pointer;
-    font-size: 1.7rem;
-    background: #fff;
-}
+    .btn {
+      display: inline-block;
+      margin-top: 1rem;
+      padding: .5rem;
+      padding-left: 1rem;
+      border: var(--border);
+      border-radius: .5rem;
+      box-shadow: var(--box-shadow);
+      color: var(--green);
+      cursor: pointer;
+      font-size: 1.7rem;
+      background: #fff;
+    }
 
-.btn span{
-    padding:.7rem 1rem;
-    border-radius: .5rem;
-    background: var(--green);
-    color:#fff;
-    margin-left: .5rem;
-}
+    .btn span {
+      padding: .7rem 1rem;
+      border-radius: .5rem;
+      background: var(--green);
+      color: #fff;
+      margin-left: .5rem;
+    }
 
-.btn:hover{
-    background: var(--green);
-    color:#fff;
-}
+    .btn:hover {
+      background: var(--green);
+      color: #fff;
+    }
 
-.btn:hover span{
-    color: var(--green);
-    background:#fff;
-    margin-left: 1rem;
-}
+    .btn:hover span {
+      color: var(--green);
+      background: #fff;
+      margin-left: 1rem;
+    }
 
-.header{
-    padding:2rem 9%;
-    position: fixed;
-    top:0; left: 0; right: 0;
-    z-index: 1000;
-    box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    background: #fff;
-}
+    .header {
+      padding: 2rem 9%;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+      box-shadow: 0 .5rem 1.5rem rgba(0, 0, 0, .1);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: #fff;
+    }
 
-.header .logo{
-    font-size: 2.5rem;
-    color: var(--black);
-}
+    .header .logo {
+      font-size: 2.5rem;
+      color: var(--black);
+    }
 
-.header .logo i{
-    color: var(--green);
-}
+    .header .logo i {
+      color: var(--green);
+    }
 
-.header .navbar a{
-    font-size: 1.7rem;
-    color: var(--light-color);
-    margin-left: 2rem;
-}
+    .header .navbar a {
+      font-size: 1.7rem;
+      color: var(--light-color);
+      margin-left: 2rem;
+    }
 
-.header .navbar a:hover{
-    color: var(--green);
-}
+    .header .navbar a:hover {
+      color: var(--green);
+    }
 
-#menu-btn{
-    font-size: 2.5rem;
-    border-radius: .5rem;
-    background: #eee;
-    color:var(--green);
-    padding: 1rem 1.5rem;
-    cursor: pointer;
-    display: none;
-}
+    #menu-btn {
+      font-size: 2.5rem;
+      border-radius: .5rem;
+      background: #eee;
+      color: var(--green);
+      padding: 1rem 1.5rem;
+      cursor: pointer;
+      display: none;
+    }
 
-.home{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:1.5rem;
-    padding-top: 10rem;
-}
+    .home {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 1.5rem;
+      padding-top: 10rem;
+    }
 
-.home .image{
-    flex:1 1 45rem;
-}
+    .home .image {
+      flex: 1 1 45rem;
+    }
 
-.home .image img{
-    width: 100%;
-}
+    .home .image img {
+      width: 100%;
+    }
 
-.home .content{
-    flex:1 1 45rem;
-}
+    .home .content {
+      flex: 1 1 45rem;
+    }
 
-.home .content h3{
-    font-size: 4.5rem;
-    color:var(--black);
-    line-height: 1.8;
-    text-shadow: var(--text-shadow);
-}
+    .home .content h3 {
+      font-size: 4.5rem;
+      color: var(--black);
+      line-height: 1.8;
+      text-shadow: var(--text-shadow);
+    }
 
-.home .content p{
-    font-size: 1.7rem;
-    color:var(--light-color);
-    line-height: 1.8;
-    padding: 1rem 0;
-}
-
-
-
-.doctors .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
-    gap:2rem;
-}
-
-.doctors .box-container .box{
-    text-align: center;
-    background:#fff;
-    border-radius: .5rem;
-    border:var(--border);
-    box-shadow: var(--box-shadow);
-    padding:2rem;
-}
-
-.doctors .box-container .box img{
-    height: 20rem;
-    border:var(--border);
-    border-radius: .5rem;
-    margin-top: 1rem;
-    margin-bottom: 1rem;
-}
-
-.doctors .box-container .box h3{
-    color:var(--black);
-    font-size: 2.5rem;
-}
-
-.doctors .box-container .box span{
-    color:var(--green);
-    font-size: 1.5rem;
-}
-
-.doctors .box-container .box .share{
-    padding-top: 2rem;
-}
-
-.doctors .box-container .box .share a{
-    height: 5rem;
-    width: 5rem;
-    line-height: 4.5rem;
-    font-size: 2rem;
-    color:var(--green);
-    border-radius: .5rem;
-    border:var(--border);
-    margin:.3rem;
-}
-
-.doctors .box-container .box .share a:hover{
-    background:var(--green);
-    color:#fff;
-    box-shadow: var(--box-shadow);
-}
-
-.book .row{
-    display: flex;
-    align-items: center;
-    flex-wrap: wrap;
-    gap:2rem;
-}
- 
-.book .row .image{
-    flex:1 1 45rem;
-}
-
-.book .row .image img{
-    width: 100%;
-}
-
-.book .row form{
-    flex:1 1 45rem;
-    background: #fff;
-    border:var(--border);
-    box-shadow: var(--box-shadow);
-    text-align: center;
-    padding: 2rem;
-    border-radius: .5rem;
-}
-
-.book .row form h3{
-    color:var(--black);
-    padding-bottom: 1rem;
-    font-size: 3rem;
-}
-
-.book .row form .box{
-    width: 100%;
-    margin:.7rem 0;
-    border-radius: .5rem;
-    border:var(--border);
-    font-size: 1.6rem;
-    color: var(--black);
-    text-transform: none;
-    padding: 1rem;
-}
-
-.book .row form .btn{
-    padding:1rem 4rem;
-}
-
-.review .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
-    gap:2rem;
-}
-
-.review .box-container .box{
-    border:var(--border);
-    box-shadow: var(--box-shadow);
-    border-radius: .5rem;
-    padding:2.5rem;
-    background: #fff;
-    text-align: center;
-    position: relative;
-    overflow: hidden;
-    z-index: 0;
-}
-
-.review .box-container .box img{
-    height: 10rem;
-    width: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    border:.5rem solid #fff;
-}
-
-.review .box-container .box h3{
-    color:#fff;
-    font-size: 2.2rem;
-    padding:.5rem 0;
-}
-
-.review .box-container .box .stars i{
-    color:#fff;
-    font-size: 1.5rem;
-}
-
-.review .box-container .box .text{
-    color:var(--light-color);
-    line-height: 1.8;
-    font-size: 1.6rem;
-    padding-top: 4rem;
-}
-
-.review .box-container .box::before{
-    content: '';
-    position: absolute;
-    top:-4rem; left: 50%;
-    transform:translateX(-50%);
-    background:var(--green);
-    border-bottom-left-radius: 50%;
-    border-bottom-right-radius: 50%;
-    height: 25rem;
-    width: 120%;
-    z-index: -1;
-}
+    .home .content p {
+      font-size: 1.7rem;
+      color: var(--light-color);
+      line-height: 1.8;
+      padding: 1rem 0;
+    }
 
 
 
-.footer .box-container{
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
-    gap:2rem;
-}
+    .doctors .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(30rem, 1fr));
+      gap: 2rem;
+    }
 
-.footer .box-container .box h3{
-    font-size: 2.5rem;
-    color:var(--black);
-    padding: 1rem 0;
-}
+    .doctors .box-container .box {
+      text-align: center;
+      background: #fff;
+      border-radius: .5rem;
+      border: var(--border);
+      box-shadow: var(--box-shadow);
+      padding: 2rem;
+    }
 
-.footer .box-container .box a{
-    display: block;
-    font-size: 1.5rem;
-    color:var(--light-color);
-    padding: 1rem 0;
-}
+    .doctors .box-container .box img {
+      height: 20rem;
+      border: var(--border);
+      border-radius: .5rem;
+      margin-top: 1rem;
+      margin-bottom: 1rem;
+    }
 
-.footer .box-container .box a i{
-    padding-right: .5rem;
-    color:var(--green);
-}
+    .doctors .box-container .box h3 {
+      color: var(--black);
+      font-size: 2.5rem;
+    }
 
-.footer .box-container .box a:hover i{
-    padding-right:2rem;
-}
+    .doctors .box-container .box span {
+      color: var(--green);
+      font-size: 1.5rem;
+    }
 
-.footer .credit{
-    padding: 1rem;
-    padding-top: 2rem;
-    margin-top: 2rem;
-    text-align: center;
-    font-size: 2rem;
-    color:var(--light-color);
-    border-top: .1rem solid rgba(0, 0, 0, .1);
-}
+    .doctors .box-container .box .share {
+      padding-top: 2rem;
+    }
 
-.footer .credit span{
-    color:var(--green);
-}
+    .doctors .box-container .box .share a {
+      height: 5rem;
+      width: 5rem;
+      line-height: 4.5rem;
+      font-size: 2rem;
+      color: var(--green);
+      border-radius: .5rem;
+      border: var(--border);
+      margin: .3rem;
+    }
+
+    .doctors .box-container .box .share a:hover {
+      background: var(--green);
+      color: #fff;
+      box-shadow: var(--box-shadow);
+    }
+
+    .book .row {
+      display: flex;
+      align-items: center;
+      flex-wrap: wrap;
+      gap: 2rem;
+    }
+
+    .book .row .image {
+      flex: 1 1 45rem;
+    }
+
+    .book .row .image img {
+      width: 100%;
+    }
+
+    .book .row form {
+      flex: 1 1 45rem;
+      background: #fff;
+      border: var(--border);
+      box-shadow: var(--box-shadow);
+      text-align: center;
+      padding: 2rem;
+      border-radius: .5rem;
+    }
+
+    .book .row form h3 {
+      color: var(--black);
+      padding-bottom: 1rem;
+      font-size: 3rem;
+    }
+
+    .book .row form .box {
+      width: 100%;
+      margin: .7rem 0;
+      border-radius: .5rem;
+      border: var(--border);
+      font-size: 1.6rem;
+      color: var(--black);
+      text-transform: none;
+      padding: 1rem;
+    }
+
+    .book .row form .btn {
+      padding: 1rem 4rem;
+    }
+
+    .review .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(27rem, 1fr));
+      gap: 2rem;
+    }
+
+    .review .box-container .box {
+      border: var(--border);
+      box-shadow: var(--box-shadow);
+      border-radius: .5rem;
+      padding: 2.5rem;
+      background: #fff;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      z-index: 0;
+    }
+
+    .review .box-container .box img {
+      height: 10rem;
+      width: 10rem;
+      border-radius: 50%;
+      object-fit: cover;
+      border: .5rem solid #fff;
+    }
+
+    .review .box-container .box h3 {
+      color: #fff;
+      font-size: 2.2rem;
+      padding: .5rem 0;
+    }
+
+    .review .box-container .box .stars i {
+      color: #fff;
+      font-size: 1.5rem;
+    }
+
+    .review .box-container .box .text {
+      color: var(--light-color);
+      line-height: 1.8;
+      font-size: 1.6rem;
+      padding-top: 4rem;
+    }
+
+    .review .box-container .box::before {
+      content: '';
+      position: absolute;
+      top: -4rem;
+      left: 50%;
+      transform: translateX(-50%);
+      background: var(--green);
+      border-bottom-left-radius: 50%;
+      border-bottom-right-radius: 50%;
+      height: 25rem;
+      width: 120%;
+      z-index: -1;
+    }
 
 
-/* media queries  */
-@media (max-width:991px){
 
-    html{
+    .footer .box-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(22rem, 1fr));
+      gap: 2rem;
+    }
+
+    .footer .box-container .box h3 {
+      font-size: 2.5rem;
+      color: var(--black);
+      padding: 1rem 0;
+    }
+
+    .footer .box-container .box a {
+      display: block;
+      font-size: 1.5rem;
+      color: var(--light-color);
+      padding: 1rem 0;
+    }
+
+    .footer .box-container .box a i {
+      padding-right: .5rem;
+      color: var(--green);
+    }
+
+    .footer .box-container .box a:hover i {
+      padding-right: 2rem;
+    }
+
+    .footer .credit {
+      padding: 1rem;
+      padding-top: 2rem;
+      margin-top: 2rem;
+      text-align: center;
+      font-size: 2rem;
+      color: var(--light-color);
+      border-top: .1rem solid rgba(0, 0, 0, .1);
+    }
+
+    .footer .credit span {
+      color: var(--green);
+    }
+
+
+    /* media queries  */
+    @media (max-width:991px) {
+
+      html {
         font-size: 55%;
-    }
+      }
 
-    .header{
+      .header {
         padding: 2rem;
+      }
+
+      section {
+        padding: 2rem;
+      }
+
     }
 
-    section{
-        padding:2rem;
-    }
+    @media (max-width:768px) {
 
-}
-
-@media (max-width:768px){
-
-    #menu-btn{
+      #menu-btn {
         display: initial;
-    }
+      }
 
-    .header .navbar{
+      .header .navbar {
         position: absolute;
-        top:115%; right: 2rem;
+        top: 115%;
+        right: 2rem;
         border-radius: .5rem;
         box-shadow: var(--box-shadow);
         width: 30rem;
@@ -412,231 +419,301 @@ section:nth-child(even){
         opacity: 0;
         transform-origin: top right;
         transition: none;
-    }
+      }
 
-    .header .navbar.active{
+      .header .navbar.active {
         transform: scale(1);
         opacity: 1;
         transition: .2s ease-out;
-    }
+      }
 
-    .header .navbar a{
+      .header .navbar a {
         font-size: 2rem;
         display: block;
-        margin:2.5rem;
+        margin: 2.5rem;
+      }
+
     }
 
-}
+    @media (max-width:450px) {
 
-@media (max-width:450px){
-
-    html{
+      html {
         font-size: 50%;
+      }
+
+    }
+  </style>
+
+  <script>
+  
+  window.onload = function() {
+
+      // Get references to elements on the page.
+      var fdform = document.getElementById('fdform');
+      var messagesList = document.getElementById('messages');
+
+      var formTime = document.getElementById('timeform');
+      var messagesListTime = document.getElementById('messagest');
+
+      // Create a new WebSocket.
+      var socket = new WebSocket('ws://localhost:5000');
+
+
+      // Handle any errors that occur.
+      socket.onerror = function(error) {
+        console.log('WebSocket Error: ' + error);
+      };
+
+      fdform.onsubmit = function(e) {
+
+        say = "Thank you for your feedback "
+        messagesList.innerHTML += say;
+
+        let tID = setTimeout(function() {
+          window.location.href = "http://localhost:5000/patientHome";
+          window.clearTimeout(tID); // clear time out.
+        }, 3000);
+      };
+
+
+
+      formTime.onsubmit = function(e) {
+
+        say = "Your Appointment Added Successfully "
+        messagesListTime.innerHTML += say;
+
+        let tID = setTimeout(function() {
+          window.location.href = "http://localhost:5000/patientHome";
+          window.clearTimeout(tID); // clear time out.
+        }, 3000);
+      };
+
+
+      
+     // socket.close();
+    //  socket.onclose = function(event) {
+       // consectetur.log("Webscoket Closed")
+    //  };
+
+
+    };
+
+
+
+    let menu = document.querySelector('#menu-btn');
+    let navbar = document.querySelector('.navbar');
+
+    menu.onclick = () => {
+      menu.classList.toggle('fa-times');
+      navbar.classList.toggle('active');
     }
 
-}
-</style>
+    window.onscroll = () => {
+      menu.classList.remove('fa-times');
+      navbar.classList.remove('active');
+    }
 
-<script>
+    function myFunction() {
 
-let menu = document.querySelector('#menu-btn');
-let navbar = document.querySelector('.navbar');
+      var name = document.getElementById("pdname").value;
+      document.getElementById("pname").value = name;
 
-menu.onclick = () =>{
-    menu.classList.toggle('fa-times');
-    navbar.classList.toggle('active');
-}
+      var phone = document.getElementById("pdphone").value;
+      document.getElementById("pphone").value = phone;
 
-window.onscroll = () =>{
-    menu.classList.remove('fa-times');
-    navbar.classList.remove('active');
-}
-function myFunction() {
+      var email = document.getElementById("pdemail").value;
+      document.getElementById("pemail").value = email;
 
-  location.href = "#book"
+      var gender = document.getElementById("pdgender").value;
+      document.getElementById("pgender").value = gender;
 
-  var name = document.getElementById("pdname").value;
-  document.getElementById("pname").value = name;
+      document.getElementById("adocname").value = "Sanath Abesinghe";
 
-  var phone = document.getElementById("pdphone").value;
-  document.getElementById("pphone").value = phone;
+      location.href = "#book"
 
-  var email = document.getElementById("pdemail").value;
-  document.getElementById("pemail").value = email;
+      event.preventDefault();
 
-  var gender = document.getElementById("pdgender").value;
-  document.getElementById("pgender").value = gender;
+      
 
-}
-
-</script>
+    }
+  </script>
 </head>
-<body>
-    
-<!-- header section starts  -->
 
-<header class="header">
-    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> My<span style="color:black;"> Doctor</span>  </a>
+<body>
+
+  <!-- header section starts  -->
+
+  <header class="header" style=" background: #e8fbff;">
+    <a href="#" class="logo"> <i class="fas fa-heartbeat"></i> My<span style="color:black;"> Doctor</span> </a>
     <nav class="navbar">
-        <a href="#home" style="color:black;font-size:22px;">home</a>
-        <a href="#doctors" style="color:black;font-size:22px;">doctors</a>
-        <a href="#book" style="color:black;font-size:22px;">book</a>
-        <a href="#review" style="color:black;font-size:22px;">feedback</a>
-        <a href="/patientProfile" class="btn" style="width:200px;height:50px;color:black;font-size:17px; text-align:center;"  onMouseOver="this.style.color='white'" onMouseOut="this.style.color='#1ca999'"> <%= title.pname %>  </a>
-        <a href="/logout" class="btn" style="width:100px;height:50px;color:black;font-size:17px;text-align:center;margin-right:-90px;"  onMouseOver="this.style.color='white'" onMouseOut="this.style.color='#1ca999'"> Log out </a>
+      <a href="#home" style="color:black;font-size:22px;">home</a>
+      <a href="#doctors" style="color:black;font-size:22px;">doctors</a>
+      <a href="#book" style="color:black;font-size:22px;">book</a>
+      <a href="#review" style="color:black;font-size:22px;">feedback</a>
+      <a href="/patientProfile" class="btn" style=" font-weight: bold;width:230px;height:44px;color:#3f6abf;font-size:17px; text-align:center;" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='#3f6abf'"> <%= title.pname %> </a>
+      <a href="/logout" class="btn" style="width:100px;height:44px;color:#3f6abf;font-size:17px;text-align:center;margin-right:-90px;" onMouseOver="this.style.color='white'" onMouseOut="this.style.color='#3f6abf'"> Log out </a>
     </nav>
     <div id="menu-btn" class="fas fa-bars"></div>
 
-</header>
+  </header>
 
-<!-- header section ends -->
+  <!-- header section ends -->
 
-<!-- home section starts  -->
+  <!-- home section starts  -->
 
-<section class="home" id="home">
-    <div class="image" >
-        <img style="mix-blend-mode: multiply;" src="login3.jpg" alt="">
+  <section class="home" id="home">
+    <div class="image">
+      <img style="mix-blend-mode: multiply;" src="login3.jpg" alt="">
     </div>
 
     <div class="content">
-        <h3>stay safe, stay healthy</h3>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Rem sed autem vero? Magnam, est laboriosam!</p>
-     </div>
+      <h3>stay safe, stay healthy and stay happy</h3>
 
-</section>
+      <p>Find Your Doctor and Select Your Time and Visit us to experience efficient and dynamic services. <br> Drink Water, Eat Clean, Stay Active and Be Healthy. </p>
+      
 
-<!-- home section ends -->
-
-<!-- doctors section starts  -->
-
-<section class="doctors" id="doctors">
-
-     <h1 class="heading"> our <span>doctors</span> </h1>
-        <% if(doctors != ''){ %>
-            <div class="box-container">
-                <% for(var i = 0; i< doctors.length; i++) {%> 
-                    <div class="box">
-                        <img src="docprofile.jpg" alt="">
-	                    <h3 id="dname"><%= doctors[i].dname%></h3>
-                        <form>
-                            <input type="hidden" id="pdname" name="abcName"  value="<%= title.pname %>">
-                            <input type="hidden" id="pdphone" name="abcName"  value="<%= title.pphone %>">
-                            <input type="hidden" id="pdemail" name="abcName"  value="<%= title.pemail %>">
-                            <input type="hidden" id="pdgender" name="abcName"  value="<%= title.pgender %>">
-                            <input type="hidden" id="myInput" value="W3Schools">
-                            <span><%= doctors[i].special%></span> <br>
-                            <span><%= doctors[i].experience%></span>
-                            <div class="share">
-                            <button class="btn" style="width:200px; height:60px;" onclick="myFunction()"> Add Appoitment </button>
-                    </div>
-                        </form>
-                </div>
-                <% } %>
-        <% }else { %>
-                <h1> No records </h1>
-        <% } %>
     </div>
-</section>
 
-<!-- doctors section ends -->
+  </section>
 
-<!-- booking section starts   -->
+  <!-- home section ends -->
 
-<section class="book" id="book">
+  <!-- doctors section starts  -->
 
-    <h1 class="heading"> <span>book</span> now </h1>    
+  <section class="doctors" id="doctors" style=" background: #e8fbff;">
+
+    <h1 class="heading"> our <span>doctors</span> </h1>
+    <% if(doctors != ''){ %>
+    <div class="box-container">
+      <% for(var i = 0; i< doctors.length; i++) {%>
+      <div class="box">
+        <img src="docprofile.jpg" alt="">
+        <h3 id="dname"><%= doctors[i].dname%></h3>
+        <form>
+          <input type="hidden" id="pdname" name="abcName" value="<%= title.pname %>">
+          <input type="hidden" id="pdphone" name="abcName" value="<%= title.pphone %>">
+          <input type="hidden" id="pdemail" name="abcName" value="<%= title.pemail %>">
+          <input type="hidden" id="pdgender" name="abcName" value="<%= title.pgender %>">
+          <input type="hidden" id="myInput" value="W3Schools">
+          <span><%= doctors[i].special%></span> <br>
+          <span><%= doctors[i].experience%></span>
+          <div class="share">
+            <button class="btn" style="width:200px; height:60px;" onclick="myFunction()"> Add Appoitment </button>
+          </div>
+        </form>
+      </div>
+      <% } %>
+      <% }else { %>
+      <h1> No records </h1>
+      <% } %>
+    </div>
+  </section>
+
+  <!-- doctors section ends -->
+
+  <!-- booking section starts   -->
+
+  <section class="book" id="book">
+
+    <h1 class="heading"> <span>book</span> now </h1>
 
     <div class="row">
 
-        <div class="image">
-            <img src="app1.jpg" style="mix-blend-mode: multiply;" alt="">
-        </div>
-        
-        <form action="/addAppointment" method="post" id="myform">
-            <h3>book appointment</h3>
-            
-            <input name="aname" id = "pname" type="text" placeholder="Your Name" class="box">
-            <input name="aphone" id = "pphone" type="number" placeholder="Your Phone Number" class="box">
-            <input name="aemail" id = "pemail" type="email" placeholder="Your Email" class="box">
-            <input name="agender" id = "pgender" type="text" placeholder="Your Gender" class="box">
-            <input name="aage" id = "page" type="number" placeholder=" Your Age" class="box">
-            <br>
-            <input name="adocname" type="text" placeholder="Doctor's Name" class="box">
-            <textarea name="adescription" class="box" placeholder="Description">Description </textarea>
-            <input name="adate" type="date" class="box">
-            <input id="but1" name="findTime" type="submit" value="Find Time Slots" class="btn" onclick="">
-        </form>
-        </div>
-            <% if(success != ''){ %>
-                <div class="row">
-                    <form action="/updateAppointmentTime" method="post" style="margin-left:700px;"  >
-                        <% for(var i = 0; i< success.length; i++) {%> 
-                            <div class="box" style="border: 1px outset red;font-size:18px;width:100px;margin:20px;display: inline-block;">
-                                <%= success[i].dtime %> 
-                            </diV>
-                        <% } %>
-                            <input name="userTime"  type="text" placeholder="Enter Time Slot for Your Appoitment" class="box">
-                            <input id="but1" name="confirmApp" type="submit" value="Confirm Appointment" class="btn" onclick="">
-                    </form>
-            <% } %>
-                <p id="retOp"></p>
+      <div class="image">
+        <img src="app1.jpg" style="mix-blend-mode: multiply;" alt="">
+      </div>
+
+      <form action="/addAppointment" method="post" id="myform">
+        <h3>book appointment</h3>
+
+        <input title="Your Name" name="aname" id="pname" type="text" placeholder="Your Name" class="box">
+        <input title="Your Phone Number" name="aphone" id="pphone" type="number" placeholder="Your Phone Number" class="box">
+        <input title="Your Email" name="aemail" id="pemail" type="email" placeholder="Your Email" class="box">
+        <input title="Your Gender" name="agender" id="pgender" type="text" placeholder="Your Gender" class="box">
+        <input title="Your Age" name="aage" id="page" type="number" placeholder=" Your Age" class="box">
+        <br>
+        <input title="Doctor's Name" id="adocname" name="adocname" type="text" placeholder="Doctor's Name" class="box">
+        <textarea title="Description" name="adescription" class="box" placeholder="Description">Description </textarea>
+        <input title="Date of Appointment" name="adate" type="date" class="box">
+        <input id="but1" name="findTime" type="submit" value="Find Time Slots" class="btn" onclick="">
+      </form>
     </div>
-</section>
+    <% if(success != ''){ %>
+    <div class="row" style="width:1403px;">
+      <form action="/updateAppointmentTime" method="post" style="margin-left:700px; " id="timeform">
+        <p style="color:#3fb4eb;font-size:23px; font-weight: bold;" id="messagest"></p>
+        <% for(var i = 0; i< success.length; i++) {%>
 
-<!-- booking section ends -->
+        <div class="box" style="border: 1px outset blue;font-size:18px;width:110px;margin:20px;display: inline-block;">
 
-<!-- review section starts  -->
+          <%= success[i].dtime %>
+        </diV>
+        <% } %>
+        <input title="Time Slot for Your Appoitment" name="userTime" type="time" placeholder="Enter Time Slot for Your Appoitment" class="box">
+        <input id="but1" name="confirmApp" type="submit" value="Confirm Appointment" class="btn" onclick="">
 
-<section class="book" id="review">
-    
+      </form>
+      <% } %>
+      <p id="retOp"></p>
+    </div>
+  </section>
+
+  <!-- booking section ends -->
+
+  <!-- review section starts  -->
+
+  <section class="book" id="review" style=" background: #e8fbff;">
+
     <h1 class="heading"> Give <span>feedback</span> </h1>
 
-   <div class="row">
+    <div class="row">
 
-        <div class="image">
-            <img src="admin1.jpg" style="mix-blend-mode: multiply;" alt="">
-        </div>
-        
-        <form action="/addFeedback" method="post" id="myform">
-            <h3>feedback</h3>
-            
-            <input name="fname"  type="text" placeholder="Your Name" class="box" value="<%= title.pname %>">
-          <input name="feedback"  type="text" placeholder="Your feedback" class="box" >
-            <input  name="feedbackbut" type="submit" value="Submit" class="btn" onclick="">
-        </form>
-               
+      <div class="image">
+        <img src="admin1.jpg" style="mix-blend-mode: multiply;" alt="">
+      </div>
+
+      <form action="/addFeedback" method="post" id="fdform">
+        <h3>feedback</h3>
+        <p style="color:#3fb4eb;font-size:23px; font-weight: bold;" id="messages"></p>
+
+        <input id="fdname" name="fname" type="text" placeholder="Your Name" class="box" value="<%= title.pname %>">
+        <input id="fdmsg" name="feedback" type="text" placeholder="Your Feedback" class="box">
+        <input id="send" name="feedbackbut" type="submit" value="Submit" class="btn">
+      </form>
+
     </div>
 
-</section>
+  </section>
 
-<!-- review section ends -->
+  <!-- review section ends -->
 
-<!-- footer section starts  -->
+  <!-- footer section starts  -->
 
-<section class="footer">
+  <section class="footer">
 
     <div class="box-container">
 
-        <div class="box" style="margin-left:370px;">
-            <h3>contact info</h3>
-            <a href="#"> <i class="fas fa-phone"></i> +9411 1252123 </a>
-            <a href="#"> <i class="fas fa-envelope"></i> Mydoctorchanel@gmail.com </a>
-            <a href="#"> <i class="fas fa-map-marker-alt"></i> Pitipana, Homagama </a>
-        </div>
+      <div class="box" style="margin-left:370px;">
+        <h3>contact info</h3>
+        <a href="#"> <i class="fas fa-phone"></i> +9411 1252123 </a>
+        <a href="#"> <i class="fas fa-envelope"></i> Mydoctorchanel@gmail.com </a>
+        <a href="#"> <i class="fas fa-map-marker-alt"></i> Pitipana, Homagama </a>
+      </div>
 
-        <div class="box" style="margin-left:150px;">
-            <h3>follow us</h3>
-            <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
-            <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
-            <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
-            
-        </div>
-        
+      <div class="box" style="margin-left:150px;">
+        <h3>follow us</h3>
+        <a href="#"> <i class="fab fa-facebook-f"></i> facebook </a>
+        <a href="#"> <i class="fab fa-twitter"></i> twitter </a>
+        <a href="#"> <i class="fab fa-instagram"></i> instagram </a>
+
+      </div>
+
     </div>
 
-</section>
+  </section>
 
-<!-- footer section ends -->
+  <!-- footer section ends -->
 
 </body>
+
 </html>

@@ -1,164 +1,221 @@
 <!DOCTYPE html>
 <html>
+
 <head>
-<link rel="stylesheet" href="style.css">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
-<style>
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
+  <title>My Doctor </title>
+  <link rel="icon" type="image/x-icon" href="heart.png">
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700&display=swap');
 
-*{
-    font-family: 'Poppins', sans-serif;
-}
+    * {
+      font-family: 'Poppins', sans-serif;
+    }
 
-#example2 {
-  
-  padding: 50px;
-  background-size: cover;
-  background-position: center;
-  background-clip: padding-box;
-}
+    #example2 {
 
-#example3 {
- 
-  padding:50px;
-  background-size: cover;
-  background-clip: padding-box;
-  background-position: center;
-}
+      padding: 50px;
+      background-size: cover;
+      background-position: center;
+      background-clip: padding-box;
+    }
 
-#example4 {
- 
-  padding:50px;
-  background-size: cover;
-  background-position: center;
-}
+    #example3 {
 
-#login{
-left:50px;
-}
-#register{
-left:450px;
-}
+      padding: 50px;
+      background-size: cover;
+      background-clip: padding-box;
+      background-position: center;
+    }
 
-#login1{
-left:50px;
-}
-#register1{
-left:450px;
-}
+    #example4 {
 
-#login2{
-left:50px;
-}
-#register2{
-left:450px;
-}
+      padding: 50px;
+      background-size: cover;
+      background-position: center;
+    }
 
-ul {
-  list-style-type: none;
-  margin: 0;
-  padding: 0;
-  overflow: hidden;
-  background-color: #333;
-}
+    #login {
+      left: 50px;
+    }
 
-li {
-  float: left;
-}
+    #register {
+      left: 450px;
+    }
 
-li a {
-  display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-}
+    #login1 {
+      left: 50px;
+    }
 
-li a:hover {
-  background-color: #111;
-}
+    #register1 {
+      left: 450px;
+    }
 
-.form-box{
-  border-radius:0.5rem;
-  width: 480px;
-  height: 595px;
-  position: relative;
-  margin-left:1px;
-  background:#c5eef0;
-  padding:5px;
-  overflow: hidden;
-  opacity:0.9;  
-  border-style: solid;
-  border-color: #16a085;
-  box-shadow: 5px 10px #888888;
-}
+    #login2 {
+      left: 50px;
+    }
 
-.formback{
-  height:700px; 
-  width:100%; 
-  background-color:; 
-  background-position:center; 
-  background-size:cover; 
-  mix-blend-mode: multiply;
-  position: relative;
-  margin-top:3px;
-}
+    #register2 {
+      left: 450px;
+    }
 
-.headclass{
-  height:352px;
-  width:1005;
-  background-color:#c5eef0;
-  box-shadow: 5px 10px #888888;
-  border-radius:0.5rem;
-  
-}
+    ul {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      overflow: hidden;
+      background-color: #333;
+    }
 
-.logoname{
-  font: 80px Poppins;
-  text-transform: uppercase;
-  color:#1ca999;
-  margin-left:200px;
-  padding-top:70px;
-  text-shadow: 6px 2px #888888;
-}
+    li {
+      float: left;
+    }
 
-.logophoto{
-  margin-left:750px;
-  padding-top:-500px;
-  margin-top:-206px;
+    li a {
+      display: block;
+      color: white;
+      text-align: center;
+      padding: 14px 16px;
+      text-decoration: none;
+    }
 
-}
-</style>
+    li a:hover {
+      background-color: #111;
+    }
+
+    .form-box {
+      border-radius: 0.5rem;
+      width: 480px;
+      height: 680px;
+      position: relative;
+      margin-left: 1px;
+      background-color: #e8fbff;
+      padding: 5px;
+      overflow: hidden;
+      border-style: solid;
+      box-shadow: 5px 10px #888888;
+    }
+
+    .formback {
+      height: 700px;
+      width: 100%;
+      background-color: ;
+      background-position: center;
+      background-size: cover;
+      mix-blend-mode: multiply;
+      position: relative;
+      margin-top: 5px;
+    }
+
+    .headclass {
+      height: 352px;
+      width: 1005;
+      background-color: #bde7f0;
+      box-shadow: 5px 10px #888888;
+      border-radius: 0.5rem;
+
+    }
+
+    .logoname {
+      font: 80px Poppins;
+      text-transform: uppercase;
+      color: #3f6abf;
+      margin-left: 200px;
+      padding-top: 70px;
+      text-shadow: 6px 2px #888888;
+    }
+
+    .logophoto {
+      margin-left: 750px;
+      padding-top: -500px;
+      margin-top: -206px;
+
+    }
+  </style>
+
+  <script>
+    window.onload = function() {
+
+      // Get references to elements on the page.
+      var register = document.getElementById('register');
+      var resPat = document.getElementById('resPat');
+
+
+      var register1 = document.getElementById('register1');
+      var resDoct = document.getElementById('resDoct');
+
+
+      // Create a new WebSocket.
+      var socket = new WebSocket('ws://localhost:5000');
+
+
+      // Handle any errors that occur.
+      socket.onerror = function(error) {
+        console.log('WebSocket Error: ' + error);
+      };
+
+      register.onsubmit = function(e) {
+
+        say = "Registration Is Done Successfully "
+        resPat.innerHTML += say;
+
+        let tID = setTimeout(function() {
+          window.location.href = "http://localhost:5000/";
+          window.clearTimeout(tID); // clear time out.
+        }, 4000);
+      };
+
+      register1.onsubmit = function(e) {
+
+        say = "Registration Is Done Successfully "
+        resDoct.innerHTML += say;
+
+        let tID = setTimeout(function() {
+          window.location.href = "http://localhost:5000/";
+          window.clearTimeout(tID); // clear time out.
+        }, 4000);
+      };
+
+      socket.close();
+      socket.onclose = function(event) {
+        consectetur.log("Webscoket Closed")
+      };
+
+    }
+  </script>
 </head>
 
-<body style="background-color:#e6eef0;">
+<body style="background-color:#e8fbff;">
 
   <div class="headclass">
     <div class="logoname"> <i class="fas fa-heartbeat"> </i> My <span style="color:black;"> Doctor</span> </div>
-    <div class="logophoto"> 
-      <img src="login.jpg" style="width:800px;height:380px;mix-blend-mode: multiply;"> </div>
+    <div class="logophoto">
+      <img src="login.jpg" style="width:800px;height:380px;mix-blend-mode: multiply;">
     </div>
+  </div>
   <br>
 
-  <div  class="formback" style="">
+  <div class="formback" style="">
     <div id="example2">
-    <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
-      <div class="form-box" style=" margin-top:-10px; ">
-		    <label style="font-style:Lucida Console;font-size:25px; margin-left:200px;margin-top:500px;opacity:0.9;font-weight:bold;"> Patient </label>
-        <hr>
-				  <div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
-					  <div id="btn" style="opacity:0.7;top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background: #16a085; transition: .5s;"> </div>
-              <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="login()"> Login </button>
-              <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="register()"> Register </button>
-				    </div>
-				  <form name="loginPatient" action="/loginPatient" method="post" id = "login" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					  <input name="email" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-				    <input name="password" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				    <br> <br>
-            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background:  #16a085; border:0; outline:none; border-radius:30px;"> Log in </button>
-				  </form>
-			
-				  <form name="addPatient" action="/addPatient" method="post" id = "register" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+      <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;">
+        <div class="form-box" style=" margin-top:-20px; margin-bottom:-82px; ">
+          <label style="font-style:Lucida Console;font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Patient </label>
+          <hr>
+          <div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 18px 5px #4eb7d4;border-radiys: 30px;border-radius:30px;">
+            <div id="btn" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background: #537eb8; transition: .5s;"> </div>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="login()"> Login </button>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="register()"> Register </button>
+          </div>
+          <form name="loginPatient" action="/loginPatient" method="post" id="login" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <input id="loginemail" name="email" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+            <input name="password" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+            <br> <br>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background:  #537eb8; border:0; outline:none; border-radius:30px;"> Log in </button>
+          </form>
+
+          <form name="addPatient" action="/addPatient" method="post" id="register" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <p style="color:#4284ed;font-size:20px; margin-top:12px; margin-left:50px;" id="resPat"></p>
             <input type="text" name="pname" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
             <input type="email" name="pemail" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
             <input type="text" name="pphone" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
@@ -166,113 +223,112 @@ li a:hover {
             <input type="text" name="pgender" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Gender Here" required>
             <input type="text" name="pnic" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter NIC Here" required>
             <input type="password" name="pcpassword" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background:  #16a085; border:0; outline:none; border-radius:30px;"> Register </button>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background:  #537eb8; border:0; outline:none; border-radius:30px;"> Register </button>
           </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="example3">
+      <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;">
+        <div class="form-box" style="margin-left:545px; margin-top:-708px;">
+          <label style="font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Doctor </label>
+          <hr>
+          <div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 5px #4eb7d4;border-radiys: 30px;border-radius:30px;">
+            <div id="btn1" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background:  #537eb8; transition: .5s;"> </div>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="logind()"> Login </button>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="registerd()"> Register </button>
+          </div>
+          <form action="/loginDoctor" method="post" id="login1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <input name="dlemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+            <input name="dlpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+            <br> <br>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background:  #537eb8; border:0; outline:none; border-radius:30px;"> Log in </button>
+          </form>
+
+          <form action="/addDoctor" method="post" id="register1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <p style="color:#4284ed;font-size:20px; margin-top:12px; margin-left:50px;" id="resDoct"></p>
+            <input name="dname" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
+            <input name="demail" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+            <input name="dphone" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
+            <input name="special" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Specialization Here" required>
+            <input name="experience" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Work Experince in Years Here" required>
+            <input name="dpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background:  #537eb8; border:0; outline:none; border-radius:30px;"> Register </button>
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="example4">
+      <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;">
+        <div class="form-box" style="margin-left:1085px; margin-top:-802px;">
+          <label style="font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Admin </label>
+          <hr>
+          <div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 5px #4eb7d4;border-radius:30px;text-align:center;">
+            <div id="btn2" style="top:0; left:0; position:absolute; width:410px; height:100%; border-radius:30px; background:  #537eb8; transition: .5s;"> </div>
+            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:150px;font-size:20px; " onclick="logina()"> Login </button>
+          </div>
+          <form action="/loginAdmin" method="post" id="login2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
+            <input name="adminemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
+            <input name="adminpw" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
+            <br> <br>
+            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: #537eb8; border:0; outline:none; border-radius:30px;"> Log in </button>
+          </form>
+        </div>
       </div>
     </div>
   </div>
 
-    <div id="example3">
-    <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
-      <div class="form-box" style="margin-left:545px; margin-top:-708px;">
-		    <label style="font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Doctor </label>
-        <hr>
-				<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radiys: 30px;border-radius:30px;">
-					<div id="btn1" style="top:0; left:0; position:absolute; width:210px; height:100%; border-radius:30px; background:  #16a085; transition: .5s;"> </div>
-            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:200px;font-size:20px;" onclick="logind()"> Login </button>
-            <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative; width:150px; font-size:20px;" onclick="registerd()"> Register </button>
-				  </div>
-				  <form action="/loginDoctor" method="post" id = "login1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					    <input name="dlemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-				      <input name="dlpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-				      <br> <br>
-              <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background:  #16a085; border:0; outline:none; border-radius:30px;"> Log in </button>
-          </form>
-			
-				  <form action="/addDoctor" method="post" id = "register1" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-            <input name="dname" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 10px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Name Here" required>
-            <input name="demail" type="email" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-            <input name= "dphone" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Phone Number Here" required>
-            <input name="special" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Specialization Here" required>
-            <input name="experience" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Work Experince in Years Here" required>
-            <input name="dpassword" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 40px; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-            <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: 5px 40px; background:  #16a085; border:0; outline:none; border-radius:30px;"> Register </button>
-          </form>
-        </div>
-    </div>
-</div>
+  <script>
+    var x = document.getElementById("login");
+    var y = document.getElementById("register");
+    var z = document.getElementById("btn");
 
-  <div id="example4">
-  <div class="hero" style="height : 100%;width : 100%;ground-image: linear-gradient(rgba(0,0,0,0.4),rgba(0,0,0,0.4),url();background-position: center;ground-size: cover;position: absolute;"> 
-    <div class="form-box" style="margin-left:1085px; margin-top:-802px;">
-		  <label style="font-size:25px; margin-left:200px;margin-top:500px;font-weight:bold;"> Admin </label>
-      <hr>
-			<div class="button-box" style="width:380px;margin: 45px auto;position: relative;box-shadow: 0 0 20px 9px #ff61241f;border-radius:30px;text-align:center;">
-				<div id="btn2" style="top:0; left:0; position:absolute; width:410px; height:100%; border-radius:30px; background:  #16a085; transition: .5s;"> </div>
-          <button type="button" class="toggle-btn" style="border:0;padding: 20px 30px;cursor: pointer;background: transparent;outline: none;position: relative;width:150px;font-size:20px; " onclick="logina()"> Login </button>
-        </div>
-				<form  action="/loginAdmin" method="post" id = "login2" class="input-group" style="top:180px; position:absolute; width:380px; transition:.5s;">
-					<input name="adminemail" type="text" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Email Here" required>
-				  <input name="adminpw" type="password" class="input-field" style="width: 100%; padding: 10px 0; margin: 5px 0; border-left:0; border-top:0; border-right:0; border-bottom: 1px solid #999; outline:none; background: transparent;" placeholder="Enter Password Here" required>
-          <br> <br>
-				  <button type="submit" class="submit-btn" style="width:85%; padding:10px 30px; cursor: pointer; display:block; margin: auto; background: #16a085; border:0; outline:none; border-radius:30px;"> Log in </button>
-				</form>
-			</div>
-    </div>
-  </div>
-</div>
+    function register() {
+      x.style.left = "-400px";
+      y.style.left = "20px";
+      z.style.left = "180px";
+    }
 
-<script>
- var x = document.getElementById("login");
- var y = document.getElementById("register");
- var z = document.getElementById("btn");
- 
- function register(){
- x.style.left = "-400px";
- y.style.left = "20px";
- z.style.left = "180px";
- }
- 
- function login(){
- x.style.left = "50px";
- y.style.left = "500px";
- z.style.left = "0px";
- }
- 
- var a = document.getElementById("login1");
- var b = document.getElementById("register1");
- var c = document.getElementById("btn1");
- 
- function registerd(){
- a.style.left = "-400px";
- b.style.left = "20px";
- c.style.left = "180px";
- }
- 
- function logind(){
- a.style.left = "50px";
- b.style.left = "500px";
- c.style.left = "0px";
- }
- 
- var e = document.getElementById("login2");
- var f = document.getElementById("register2");
- var g = document.getElementById("btn2");
- 
- function registera(){
- e.style.left = "-400px";
- f.style.left = "20px";
- g.style.left = "110px";
- }
- 
- function logina(){
- e.style.left = "50px";
- f.style.left = "500px";
- g.style.left = "0px";
- }
- 
-</script> 
+    function login() {
+      x.style.left = "50px";
+      y.style.left = "500px";
+      z.style.left = "0px";
+    }
+
+    var a = document.getElementById("login1");
+    var b = document.getElementById("register1");
+    var c = document.getElementById("btn1");
+
+    function registerd() {
+      a.style.left = "-400px";
+      b.style.left = "20px";
+      c.style.left = "180px";
+    }
+
+    function logind() {
+      a.style.left = "50px";
+      b.style.left = "500px";
+      c.style.left = "0px";
+    }
+
+    var e = document.getElementById("login2");
+    var f = document.getElementById("register2");
+    var g = document.getElementById("btn2");
+
+    function registera() {
+      e.style.left = "-400px";
+      f.style.left = "20px";
+      g.style.left = "110px";
+    }
+
+    function logina() {
+      e.style.left = "50px";
+      f.style.left = "500px";
+      g.style.left = "0px";
+    }
+  </script>
 </body>
+
 </html>
-
-
