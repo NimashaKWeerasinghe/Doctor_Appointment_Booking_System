@@ -471,7 +471,7 @@ body {
 	background: var(--grey);
 }
 #content main .table-data .order table tr td .status {
-	font-size: 10px;
+	font-size: 7px;
 	padding: 6px 16px;
 	color: var(--light);
 	border-radius: 20px;
@@ -641,7 +641,7 @@ function deletePatientFun() {
      let tID = setTimeout(function () {
             window.location.href = "http://localhost:5000/adminHome";
             window.clearTimeout(tID);		// clear time out.
-        }, 3000);
+        }, 2000);
 
 	socket.close();
 	socket.onclose = function(event) {
@@ -671,7 +671,7 @@ function deletePatientFun() {
      let tID = setTimeout(function () {
             window.location.href = "http://localhost:5000/adminHome";
             window.clearTimeout(tID);		// clear time out.
-        }, 3000);
+        }, 1000);
 
 	socket.close();
 	socket.onclose = function(event) {
@@ -946,45 +946,46 @@ menuBar.addEventListener('click', function () {
 					</div>
 						 <p style="color:red;font-size:18px; margin-bottom:22px;" id="messagesapp"></p>
                     <% if(appForAdmin != ''){ %>
-					<table>
-						<thead>
-							<tr>
-								<th>No</th>
-								<th>Name</th>
-								<th>Email</th>
-                                <th>Phone</th>
-                                <th>Gender</th>
-                                <th>Age</th>
-                                <th>Description</th>
-                                <th>Doctor's Name</th>
-                                <th>Date</th>
-                                <th>Time</th>
-								<th> Update </th>
-								<th> Delete </td>
+					<table style="font-size:13px; text-align: center;">
+						<thead style="">
+							<tr style=" ">
+								<th style="text-align: center;">No</th>
+								<th style="text-align: center;">Name</th>
+								<th style="text-align: center;">Email</th>
+                                <th style="text-align: center;">Phone</th>
+                                <th style="text-align: center;">Gender</th>
+                                <th style="text-align: center;">Age</th>
+                                <th style="text-align: center;">Description</th>
+                                <th style="text-align: center;">Doctor's Name</th>
+                                <th style="text-align: center;">Date</th>
+                                <th style="text-align: center;">Time</th>
+                                <th style="text-align: center;">Update</th>
+								<th style="text-align: center;"> Delete </th>
+								
                                
 							</tr>
 						</thead>
                        
                         <% for(var i = 0; i< appForAdmin.length; i++) {%> 
-						<tbody>
+						<tbody style="">
 							<tr>
 								<td>    <%= i+1 %>  </td>
-								<td><%= appForAdmin[i].aname%></td>
-                                <td><%= appForAdmin[i].aemail%></td>
-                                <td><%= appForAdmin[i].aphone%></td>
-                                <td><%= appForAdmin[i].agender%></td>
-                                <td><%= appForAdmin[i].aage%></td>
-                                <td><%= appForAdmin[i].adescription%></td>
-                                <td><%= appForAdmin[i].adocname%></td>
-                                <td><%= appForAdmin[i].adate%></td>
-                                <td><%= appForAdmin[i].atime%></td>
-								<td>
-									<a href="/editAppointment/<%= appForAdmin[i]._id %>" style="display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+								<td style=""><%= appForAdmin[i].aname%></td>
+                                <td style=" "><%= appForAdmin[i].aemail%></td>
+                                <td style=""><%= appForAdmin[i].aphone%></td>
+                                <td style=""><%= appForAdmin[i].agender%></td>
+                                <td style=""><%= appForAdmin[i].aage%></td>
+                                <td style=""><%= appForAdmin[i].adescription%></td>
+                                <td style=""><%= appForAdmin[i].adocname%></td>
+                                <td style=""><%= appForAdmin[i].adate%></td>
+                                <td style=""><%= appForAdmin[i].atime%></td>
+								<td style="">
+									<a href="/editAppointment/<%= appForAdmin[i]._id %>" style="margin:auto;display: block;width: 115px;height: 30px;background: #4E9CAF;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
 										Update
 									</a>
 								</td>
-								<td>
-									<a href="/deleteAppointment/<%= appForAdmin[i]._id %>" onclick="deleteAppFun()" style="display: block;width: 115px;height: 30px;background: red;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
+								<td style="">
+									<a href="/deleteAppointment/<%= appForAdmin[i]._id %>" onclick="deleteAppFun()" style="margin:auto;display: block;width: 115px;height: 30px;background: red;padding:2px;text-align: center;border-radius: 5px;color: white;line-height: 25px;">
 										Delete
 									</a>
 								
@@ -1010,8 +1011,7 @@ menuBar.addEventListener('click', function () {
 				<div class="order">
 					<div class="head">
 						<h3>Patient's FeedBacks</h3>
-						<i class='bx bx-search' ></i>
-						<i class='bx bx-filter' ></i>
+						
 					</div>
                     <% if(fbForAdmin != ''){ %>
 					<table>

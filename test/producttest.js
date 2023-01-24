@@ -13,7 +13,7 @@ chai.use(chaiHttp);
 //const { deleteOne } = require('../models/patient');
 
 
-describe('/First Test Collection', () => {
+describe('/Initial Testing', () => {
 
     it('should test login route....', (done) => {
         // actual test content
@@ -24,6 +24,14 @@ describe('/First Test Collection', () => {
             done();
         })
     })
+
+})
+
+
+
+describe('/Patient Testing', () => {
+
+    
     // Patient Login
     it('test login patient route with values....', (done) => {
         const userCredentials = {
@@ -41,39 +49,9 @@ describe('/First Test Collection', () => {
         })
     })
 
-    // Doctor Login
-    it('test login doctor route with values....', (done) => {
-        const userCredentials = {
-            email: 'nadini@gmail.com', 
-            password: '123'
-        }
+   
 
-         chai.request(server)
-        .post('/loginDoctor')
-        .send(userCredentials)
-        .end(function(err, response){
-            expect(response.statusCode).to.equal(500);
-            expect('Location', '/doctorHome');
-            done();
-        })
-    })
-
-    // Admin Login
-    it('test login admin route with values....', (done) => {
-        const userCredentials = {
-            email: 'medcareadmingmail.com', 
-            password: 'admin123'
-        }
-
-         chai.request(server)
-        .post('/loginDoctor')
-        .send(userCredentials)
-        .end(function(err, response){
-            expect(response.statusCode).to.equal(500);
-            expect('Location', '/adminHome');
-            done();
-        })
-    })
+   
 
     // Register Patient 
     it('test register patient route with values....', async function ()  {
@@ -97,26 +75,7 @@ describe('/First Test Collection', () => {
     })
     
 
-    // Register Doctor 
-    it('test register doctor route with values....', async function ()  {
-        let doctor = {
-            dname: 'Jayalath Jayakodi',
-            demail: 'jayalath@gmail.com',
-            dphone: '0789696963',
-            special: 'CONSULTANT NEUROSURGEON',
-            experience: '2 years',
-            pemail: 'ashanthi@gmail.com',
-            dpassword: 'jayalathi123'
-        }
-
-         chai.request(server)
-        .post('/addDoctor')
-        .send(doctor)
-        .end(function(err, response){
-            expect('Location', '/doctorHome');
-            
-        })
-    })
+   
 
     // Add Poointment
     it('test add appointment route with values....', async function ()  {
@@ -157,24 +116,7 @@ describe('/First Test Collection', () => {
         })
     })
     
-    // Add timeslots 
-    it('test add time slots route with values....', (done) => {
-        const times = {
-            docemail: 'sanath@gmail.com',
-            ddate: '2023-10-10',
-            dtime: '11:05'
-        }
-
-         chai.request(server)
-        .post('/timeslots')
-        .send(times)
-        .end(function(err, response){
-           // expect(response.statusCode).to.equal(500);
-            expect('Location', '/doctorHome');
-            done();
-        })
-    })
-
+   
     // Add feedback
     it('test add feedback route with values....', async function () {
         const feedback = {
@@ -227,3 +169,101 @@ describe('/First Test Collection', () => {
     **/
 
 })
+
+describe('/Other Testing', () => {
+
+   after(() => {
+    process.exit();
+   });
+
+    // Doctor Login
+    it('test login doctor route with values....', (done) => {
+        const userCredentials = {
+            email: 'nadini@gmail.com', 
+            password: '123'
+        }
+
+         chai.request(server)
+        .post('/loginDoctor')
+        .send(userCredentials)
+        .end(function(err, response){
+            expect(response.statusCode).to.equal(500);
+            expect('Location', '/doctorHome');
+            done();
+        })
+    })
+
+    // Admin Login
+    it('test login admin route with values....', (done) => {
+        const userCredentials = {
+            email: 'medcareadmingmail.com', 
+            password: 'admin123'
+        }
+
+         chai.request(server)
+        .post('/loginDoctor')
+        .send(userCredentials)
+        .end(function(err, response){
+            expect(response.statusCode).to.equal(500);
+            expect('Location', '/adminHome');
+            done();
+        })
+    })
+
+   
+    
+
+    // Register Doctor 
+    it('test register doctor route with values....', async function ()  {
+        let doctor = {
+            dname: 'Jayalath Jayakodi',
+            demail: 'jayalath@gmail.com',
+            dphone: '0789696963',
+            special: 'CONSULTANT NEUROSURGEON',
+            experience: '2 years',
+            pemail: 'ashanthi@gmail.com',
+            dpassword: 'jayalathi123'
+        }
+
+         chai.request(server)
+        .post('/addDoctor')
+        .send(doctor)
+        .end(function(err, response){
+            expect('Location', '/doctorHome');
+            
+        })
+    })
+
+    
+
+    
+    
+    // Add timeslots 
+    it('test add time slots route with values....', (done) => {
+        const times = {
+            docemail: 'sanath@gmail.com',
+            ddate: '2023-10-10',
+            dtime: '11:05'
+        }
+
+         chai.request(server)
+        .post('/timeslots')
+        .send(times)
+        .end(function(err, response){
+           // expect(response.statusCode).to.equal(500);
+            expect('Location', '/doctorHome');
+            done();
+        })
+    })
+
+    
+
+    
+
+
+
+
+   
+
+})
+

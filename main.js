@@ -64,7 +64,7 @@ wss.on('connection', function connection(ws) {
 
 
 server.listen(PORT, () => {
-    console.log('Server started at http://localhost:5000');
+    console.log('Server started at port:5000');
 
 });
 
