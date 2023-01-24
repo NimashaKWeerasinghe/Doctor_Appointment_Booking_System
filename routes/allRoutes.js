@@ -14,8 +14,7 @@ const passport = require('passport');
 const flash = require("express-flash")
 
 const config = require("../config/config");
-//const session = require("express-session");
-//routes.use(session({secret:config.sessionSecret}));
+
 
 const bodyParser = require("body-parser");
 routes.unsubscribe(bodyParser.json());
@@ -48,14 +47,6 @@ routes.post("/addPatient", asyncHandler(async (req, res) => {
       res.json({ message: err.message, type: 'danger' });
     } else {
 
-      //res.redirect(req.get('referer'));
-      //return res.status(400).json({
-
-      // });
-      // req.session.message = {
-      //    type: "success",
-      //   message: "User added successfully",
-      //};
     }
   });
 })
@@ -84,12 +75,8 @@ routes.post("/addDoctor", asyncHandler(async (req, res) => {
       //res.redirect(req.get('referer'));
       //res.redirect(req.get('referer'));
       //return res.status(400).json({
-
       //});
-      // req.session.message = {
-      //  type: "success",
-      // message: "User added successfully",
-      //};
+    
     }
   });
 })
@@ -120,7 +107,6 @@ routes.post("/loginPatient", asyncHandler(async (req, res) => {
       console.log('User Successfully Logged In')
       res.redirect("/patientHome")
     } else {
-      console.log('Incorrect Password')
       return res.status(400).json({
         message: "Incorrect Password",
       });
@@ -178,8 +164,9 @@ routes.post("/addAppointment", asyncHandler(async (req, res) => {
       res.json({ message: err.message, type: 'danger' });
     } else {
       Doctor.findOne({ dname: doctorname }).exec((err, doctoremail) => {
+
         global.docemail = doctoremail.demail;
-        console.log(docemail);
+        
         TimeSlot.find({ $and: [{ ddate: doctordate }, { demail: docemail }] }).exec((err, timeslots) => {
 
           res.render('patientHome', {
@@ -189,7 +176,7 @@ routes.post("/addAppointment", asyncHandler(async (req, res) => {
           });
 
           global.timeslotsarray = timeslots;
-          console.log(timeslots)
+          
         });
       });
       // req.session.message = {
@@ -206,18 +193,18 @@ routes.post("/addAppointment", asyncHandler(async (req, res) => {
 routes.post("/updateAppointmentTime", asyncHandler(async (req, res) => {
 
   userTime = req.body.userTime
-  console.log(userTime)
+  
 
   var newvalues = { $set: { atime: userTime } };
 
   Appointment.updateOne({ $and: [{ adocname: doctorname }, { adate: doctordate }, { aemail: userEmail }] }, newvalues).exec((err, dis) => {
-    console.log("1 document updated");
+    
   });
 
   TimeSlot.deleteOne({ $and: [{ dtime: userTime }, { ddate: doctordate }, { demail: docemail }] }, newvalues).exec((err, dis) => {
 
     // res.redirect(req.get('referer'));
-    console.log("1 document deleted");
+    
   });
 })
 );
