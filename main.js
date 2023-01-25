@@ -1,12 +1,11 @@
 //Imports 
 require('dotenv').config();
-const express = require('express');
 const mongoose = require('mongoose');
 const session = require('express-session');
 
+const express = require('express');
 const app = express();
 const PORT = process.env.PORT || 4000;
-
 const server = require('http').createServer(app);
 const WebSocket = require('ws');
 
@@ -56,11 +55,7 @@ app.get('/patientHome', (req, res) => {
 wss.on('connection', function connection(ws) {
     console.log('New Web Socket Connection')
 
-    ws.on('message', function incoming(message) {
-        console.log("received %s", message)
-
-    })
-})
+});
 
 
 server.listen(PORT, () => {

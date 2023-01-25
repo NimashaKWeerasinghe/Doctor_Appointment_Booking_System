@@ -10,10 +10,7 @@ const FeedBack = require('../models/feedback');
 
 var asyncHandler = require("express-async-handler");
 
-const passport = require('passport');
 const flash = require("express-flash")
-
-const config = require("../config/config");
 
 
 const bodyParser = require("body-parser");
@@ -45,8 +42,6 @@ routes.post("/addPatient", asyncHandler(async (req, res) => {
   newPatient.save((err) => {
     if (err) {
       res.json({ message: err.message, type: 'danger' });
-    } else {
-
     }
   });
 })
