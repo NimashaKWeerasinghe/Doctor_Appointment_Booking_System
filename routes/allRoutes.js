@@ -564,12 +564,8 @@ routes.get('/deleteDoctor/:id', (req, res) => {
     if (err) {
       res.json({ message: err.message });
     } else {
-      // console.log(doctorsDetails);
-
-      //res.send("Hii")
+      
       // res.redirect(req.get('referer'));
-
-
 
     }
 
@@ -585,12 +581,8 @@ routes.get('/deleteAppointment/:id', (req, res) => {
     if (err) {
       res.json({ message: err.message });
     } else {
-      // console.log(doctorsDetails);
-
-      //res.send("Hii")
+    
       //res.redirect(req.get('referer'));
-
-
 
     }
 
@@ -601,10 +593,7 @@ routes.get('/deleteAppointment/:id', (req, res) => {
 routes.post(
   "/addFeedback",
   asyncHandler(async (req, res) => {
-    // Put some validation related to
-    // email validation and strong password rules
-
-    // Initialize newUser object with request data
+    
     const newFeedback = new FeedBack({
       name: req.body.fname,
       feedback: req.body.feedback
@@ -613,10 +602,7 @@ routes.post(
     newFeedback.save((err) => {
       if (err) {
         res.json({ message: err.message, type: 'danger' });
-     // } else {
-        // res.redirect(req.get('referer'));
-
-        //res.redirect("/"); //redirect add user to home page
+    
       }
 
     });
@@ -626,13 +612,7 @@ routes.post(
 
 
 routes.get('/logout', function (req, res, next) {
-  // remove the req.user property and clear the login session
-  // req.logout();
-
-  // destroy session data
-  // req.session = null;
-
-  // redirect to homepage
+  
   res.redirect('/');
 });
 
